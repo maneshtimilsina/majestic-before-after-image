@@ -1,4 +1,9 @@
 <?php
+/**
+ * Widget
+ *
+ * @package MBAI
+ */
 
 use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
@@ -6,17 +11,22 @@ use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Image_Size;
 use \Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 
+/**
+ * MBAI Elementor widget class.
+ *
+ * @since 1.0.0
+ */
 class MBAI_Elementor_Widget extends Widget_Base {
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );
 
-		wp_register_script( 'mbai-event-move', MBAI_URL . '/third-party/event-move/event.move.js', array(), MBAI_VERSION );
-		wp_register_script( 'mbai-twentytwenty', MBAI_URL . '/third-party/twentytwenty/js/twentytwenty.js', array(), MBAI_VERSION );
+		wp_register_script( 'mbai-event-move', MBAI_URL . '/third-party/event-move/event.move.js', array(), MBAI_VERSION, false );
+		wp_register_script( 'mbai-twentytwenty', MBAI_URL . '/third-party/twentytwenty/js/twentytwenty.js', array(), MBAI_VERSION, false );
 
 		wp_register_script( 'mbai-widget', MBAI_URL . '/assets/js/before-after-frontend.js', array( 'elementor-frontend', 'mbai-event-move', 'mbai-twentytwenty' ), MBAI_VERSION, true );
 
-		wp_register_style( 'mbai-twentytwenty', MBAI_URL . '/third-party/twentytwenty/css/twentytwenty.css' );
-		wp_register_style( 'mbai-widget', MBAI_URL . '/assets/css/main.css', array( 'mbai-twentytwenty' ) );
+		wp_register_style( 'mbai-twentytwenty', MBAI_URL . '/third-party/twentytwenty/css/twentytwenty.css', array(), MBAI_VERSION );
+		wp_register_style( 'mbai-widget', MBAI_URL . '/assets/css/main.css', array( 'mbai-twentytwenty' ), MBAI_VERSION );
 	}
 
 	public function get_script_depends() {
@@ -421,7 +431,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		);
 
 		?>
-		<div class="mbai-before-after-wrap handler-style-<?php echo absint( $settings['handler_style'] ); ?>" data-mbai='<?php echo json_encode( $data ); ?>'>
+		<div class="mbai-before-after-wrap handler-style-<?php echo absint( $settings['handler_style'] ); ?>" data-mbai='<?php echo wp_json_encode( $data ); ?>'>
 
 			<div class="mbai-before-after-container">
 
@@ -438,13 +448,20 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$before_image = $settings['before_image'];
 		$after_image  = $settings['after_image'];
 
-		if ( ! ( $before_image['id'] || $after_image['id'] ) ) {
-			return;
-		}
-
 		$post_thumbnail_size = $settings['post_thumbnail_size'];
 
-		echo wp_get_attachment_image( $before_image['id'], $post_thumbnail_size, '', array( 'class' => 'img-before' ) );
-		echo wp_get_attachment_image( $after_image['id'], $post_thumbnail_size, '', array( 'class' => 'img-after' ) );
+		// Before image.
+		if ( absint( $before_image['id'] ) > 0 ) {
+			echo wp_get_attachment_image( $before_image['id'], $post_thumbnail_size, '', array( 'class' => 'img-before' ) );
+		} elseif ( ! empty( $before_image['url'] ) ) {
+			echo '<img src="' . esc_url( $before_image['url'] ) . '" class="img-before">';
+		}
+
+		// After image.
+		if ( absint( $after_image['id'] ) > 0 ) {
+			echo wp_get_attachment_image( $after_image['id'], $post_thumbnail_size, '', array( 'class' => 'img-after' ) );
+		} elseif ( ! empty( $after_image['url'] ) ) {
+			echo '<img src="' . esc_url( $after_image['url'] ) . '" class="img-after">';
+		}
 	}
 }

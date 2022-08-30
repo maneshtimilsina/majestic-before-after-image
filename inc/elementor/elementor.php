@@ -1,5 +1,15 @@
 <?php
+/**
+ * Elementor init
+ *
+ * @package MBAI
+ */
 
+/**
+ * MBAI Elementor class.
+ *
+ * @since 1.0.0
+ */
 class MBAI_Elementor {
 	/**
 	 * Instance.
