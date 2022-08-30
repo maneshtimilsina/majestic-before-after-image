@@ -17,15 +17,16 @@ class MBAIWidgetHandlerClass extends elementorModules.frontend.handlers.Base {
 	}
 
 	bindEvents() {
+		const data = this.elements.$mainWrapper.data('mbai');
+
+		const { orientation, before_label, after_label, handler_offset, move_slider_on_hover } = data;
+
 		this.elements.$container.twentytwenty( {
-			default_offset_pct: 0.5,
-			orientation: 'horizontal',
-			before_label: 'Before',
-			after_label: 'After',
-			no_overlay: false,
-			move_slider_on_hover: false,
-			move_with_handle_only: true,
-			click_to_move: false,
+			default_offset_pct: handler_offset,
+			orientation: orientation,
+			before_label: before_label,
+			after_label: after_label,
+			move_slider_on_hover: move_slider_on_hover
 		} );
 	}
 }
