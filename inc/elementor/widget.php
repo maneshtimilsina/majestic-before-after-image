@@ -242,7 +242,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 				'type'      => Controls_Manager::SWITCHER,
 				'label_on'  => __( 'Yes', 'majestic-before-after-image' ),
 				'label_off' => __( 'No', 'majestic-before-after-image' ),
-				'default'   => 'yes',
+				'default'   => 'no',
 			)
 		);
 
@@ -412,10 +412,18 @@ class MBAI_Elementor_Widget extends Widget_Base {
 	protected function render( $instance = array() ) {
 		$settings = $this->get_settings();
 
-		?>
-		<div class="mbai-before-after-wrap">
+		$data = array(
+			'orientation'          => $settings['slider_orientation'],
+			'before_label'         => $settings['before_text'],
+			'after_label'          => $settings['after_text'],
+			'handler_offset'       => $settings['handler_offset']['size'],
+			'move_slider_on_hover' => ( 'yes' === $settings['move_slider_on_hover'] ) ? true : false,
+		);
 
-			<div class="mbai-before-after-container" data-orientation="<?php echo $settings['slider_orientation']; ?>">
+		?>
+		<div class="mbai-before-after-wrap handler-style-<?php echo absint( $settings['handler_style'] ); ?>" data-mbai='<?php echo json_encode( $data ); ?>'>
+
+			<div class="mbai-before-after-container">
 
 				<?php $this->render_images(); ?>
 
