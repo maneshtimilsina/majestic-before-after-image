@@ -1,0 +1,48 @@
+# Copyright (C) 2022 WP Concern
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Majestic Before After Image 1.0.0\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/majestic-before-after-image\n"
+"POT-Creation-Date: 2022-08-30 09:35:45+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: node-wp-i18n 1.2.6\n"
+
+#: inc/mbai.php:58
+#. translators: 1: Plugin name 2: Elementor
+msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
+msgstr ""
+
+#: inc/mbai.php:59
+msgid "Before After Image Comparison For Elementor"
+msgstr ""
+
+#: inc/mbai.php:60
+msgid "Elementor"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Majestic Before After Image"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wpconcern.com/plugins/majestic-before-after-image/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Compare before and after versions of the image."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "WP Concern"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://wpconcern.com/"
+msgstr ""

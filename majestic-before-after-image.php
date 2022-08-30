@@ -24,4 +24,4 @@ define( 'MBAI_DIR', rtrim( plugin_dir_path( __FILE__ ), '/' ) );
 define( 'MBAI_URL', rtrim( plugin_dir_url( __FILE__ ), '/' ) );
 
 // Init plugin.
-// require_once MBAI_DIR . '/inc/init.php';
+require_once MBAI_DIR . '/inc/mbai.php';
