@@ -17,8 +17,6 @@ class MBAIWidgetHandlerClass extends elementorModules.frontend.handlers.Base {
 	}
 
 	bindEvents() {
-		console.log('here');
-
 		this.elements.$container.twentytwenty({
 			default_offset_pct: 0.5,
 			orientation: 'horizontal',
