@@ -28,7 +28,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 	}
 
 	public function get_name() {
-		return 'mbai-before-after';
+		return 'mbai-before-after-image';
 	}
 
 	public function get_title() {
@@ -44,28 +44,28 @@ class MBAI_Elementor_Widget extends Widget_Base {
 	}
 
 	protected function register_controls() {
-		$this->baice_content_general_options();
-		$this->baice_content_handler_options();
+		$this->content_general_options();
+		$this->content_handler_options();
 
-		$this->baice_style_labels_options();
-		$this->baice_style_handler_options();
+		$this->style_labels_options();
+		$this->style_handler_options();
 	}
 
 	/**
 	 * Content General Options.
 	 */
-	private function baice_content_general_options() {
+	private function content_general_options() {
 		$this->start_controls_section(
 			'section_general',
 			array(
-				'label' => esc_html__( 'General', 'before-after-image-comparison-for-elementor' ),
+				'label' => esc_html__( 'General', 'majestic-before-after-image' ),
 			)
 		);
 
 		$this->add_control(
 			'before_image',
 			array(
-				'label'   => esc_html__( 'Before Image', 'before-after-image-comparison-for-elementor' ),
+				'label'   => esc_html__( 'Before Image', 'majestic-before-after-image' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => array(
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -76,7 +76,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->add_control(
 			'after_image',
 			array(
-				'label'   => esc_html__( 'After Image', 'before-after-image-comparison-for-elementor' ),
+				'label'   => esc_html__( 'After Image', 'majestic-before-after-image' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => array(
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -97,10 +97,10 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->add_control(
 			'enable_overlay',
 			array(
-				'label'     => esc_html__( 'Enable Overlay', 'before-after-image-comparison-for-elementor' ),
+				'label'     => esc_html__( 'Enable Overlay', 'majestic-before-after-image' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_on'  => __( 'Yes', 'before-after-image-comparison-for-elementor' ),
-				'label_off' => __( 'No', 'before-after-image-comparison-for-elementor' ),
+				'label_on'  => __( 'Yes', 'majestic-before-after-image' ),
+				'label_off' => __( 'No', 'majestic-before-after-image' ),
 				'default'   => 'yes',
 				'separator' => 'before',
 			)
@@ -111,7 +111,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			'overlay_color',
 			array(
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Overlay Color', 'before-after-image-comparison-for-elementor' ),
+				'label'     => esc_html__( 'Overlay Color', 'majestic-before-after-image' ),
 				'default'   => 'rgba(0, 0, 0, 0.5)',
 				'condition' => array(
 					'enable_overlay' => 'yes',
@@ -125,13 +125,13 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->add_control(
 			'enable_labels',
 			array(
-				'label'     => esc_html__( 'Enable Labels', 'before-after-image-comparison-for-elementor' ),
+				'label'     => esc_html__( 'Enable Labels', 'majestic-before-after-image' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'hover',
 				'options'   => array(
-					'hover'  => esc_html__( 'On Hover', 'before-after-image-comparison-for-elementor' ),
-					'always' => esc_html__( 'Always', 'before-after-image-comparison-for-elementor' ),
-					'never'  => esc_html__( 'Never', 'before-after-image-comparison-for-elementor' ),
+					'hover'  => esc_html__( 'On Hover', 'majestic-before-after-image' ),
+					'always' => esc_html__( 'Always', 'majestic-before-after-image' ),
+					'never'  => esc_html__( 'Never', 'majestic-before-after-image' ),
 				),
 				'separator' => 'before',
 				'condition' => array(
@@ -143,9 +143,9 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->add_control(
 			'before_text',
 			array(
-				'label'     => esc_html__( 'Before Text', 'before-after-image-comparison-for-elementor' ),
+				'label'     => esc_html__( 'Before Text', 'majestic-before-after-image' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => __( 'Before', 'before-after-image-comparison-for-elementor' ),
+				'default'   => __( 'Before', 'majestic-before-after-image' ),
 				'condition' => array(
 					'enable_overlay' => 'yes',
 					'enable_labels!' => 'never',
@@ -156,9 +156,9 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->add_control(
 			'after_text',
 			array(
-				'label'     => esc_html__( 'After Text', 'before-after-image-comparison-for-elementor' ),
+				'label'     => esc_html__( 'After Text', 'majestic-before-after-image' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => __( 'After', 'before-after-image-comparison-for-elementor' ),
+				'default'   => __( 'After', 'majestic-before-after-image' ),
 				'condition' => array(
 					'enable_overlay' => 'yes',
 					'enable_labels!' => 'never',
@@ -169,15 +169,15 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->add_control(
 			'slider_orientation',
 			array(
-				'label'     => esc_html__( 'Orientation', 'before-after-image-comparison-for-elementor' ),
+				'label'     => esc_html__( 'Orientation', 'majestic-before-after-image' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => array(
 					'horizontal' => array(
-						'title' => __( 'Horizontal', 'before-after-image-comparison-for-elementor' ),
+						'title' => __( 'Horizontal', 'majestic-before-after-image' ),
 						'icon'  => 'eicon-h-align-stretch',
 					),
 					'vertical'   => array(
-						'title' => __( 'Vertical', 'before-after-image-comparison-for-elementor' ),
+						'title' => __( 'Vertical', 'majestic-before-after-image' ),
 						'icon'  => 'eicon-v-align-stretch',
 					),
 				),
@@ -192,11 +192,11 @@ class MBAI_Elementor_Widget extends Widget_Base {
 	/**
 	 * Content Handler Options.
 	 */
-	private function baice_content_handler_options() {
+	private function content_handler_options() {
 		$this->start_controls_section(
 			'section_handler',
 			array(
-				'label' => __( 'Handler', 'before-after-image-comparison-for-elementor' ),
+				'label' => __( 'Handler', 'majestic-before-after-image' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -204,15 +204,15 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->add_control(
 			'handler_style',
 			array(
-				'label'   => __( 'Handler Style', 'before-after-image-comparison-for-elementor' ),
+				'label'   => __( 'Handler Style', 'majestic-before-after-image' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => '1',
 				'options' => array(
-					'1' => esc_html__( 'Style 1', 'before-after-image-comparison-for-elementor' ),
-					'2' => esc_html__( 'Style 2', 'before-after-image-comparison-for-elementor' ),
-					'3' => esc_html__( 'Style 3', 'before-after-image-comparison-for-elementor' ),
-					'4' => esc_html__( 'Style 4', 'before-after-image-comparison-for-elementor' ),
-					'5' => esc_html__( 'Style 5', 'before-after-image-comparison-for-elementor' ),
+					'1' => esc_html__( 'Style 1', 'majestic-before-after-image' ),
+					'2' => esc_html__( 'Style 2', 'majestic-before-after-image' ),
+					'3' => esc_html__( 'Style 3', 'majestic-before-after-image' ),
+					'4' => esc_html__( 'Style 4', 'majestic-before-after-image' ),
+					'5' => esc_html__( 'Style 5', 'majestic-before-after-image' ),
 				),
 			)
 		);
@@ -220,7 +220,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->add_control(
 			'handler_offset',
 			array(
-				'label'   => esc_html__( 'Default Offset', 'before-after-image-comparison-for-elementor' ),
+				'label'   => esc_html__( 'Default Offset', 'majestic-before-after-image' ),
 				'type'    => Controls_Manager::SLIDER,
 				'default' => array(
 					'size' => 0.5,
@@ -238,10 +238,10 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->add_control(
 			'move_slider_on_hover',
 			array(
-				'label'     => esc_html__( 'Enable On Mouse Hover', 'before-after-image-comparison-for-elementor' ),
+				'label'     => esc_html__( 'Enable On Mouse Hover', 'majestic-before-after-image' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_on'  => __( 'Yes', 'before-after-image-comparison-for-elementor' ),
-				'label_off' => __( 'No', 'before-after-image-comparison-for-elementor' ),
+				'label_on'  => __( 'Yes', 'majestic-before-after-image' ),
+				'label_off' => __( 'No', 'majestic-before-after-image' ),
 				'default'   => 'yes',
 			)
 		);
@@ -252,12 +252,12 @@ class MBAI_Elementor_Widget extends Widget_Base {
 	/**
 	 * Style > Labels.
 	 */
-	private function baice_style_labels_options() {
+	private function style_labels_options() {
 		// Tab.
 		$this->start_controls_section(
 			'section_labels_style',
 			array(
-				'label'     => esc_html__( 'Labels', 'before-after-image-comparison-for-elementor' ),
+				'label'     => esc_html__( 'Labels', 'majestic-before-after-image' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'enable_overlay' => 'yes',
@@ -283,7 +283,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			'labels_style_color',
 			array(
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Color', 'before-after-image-comparison-for-elementor' ),
+				'label'     => esc_html__( 'Color', 'majestic-before-after-image' ),
 				'separator' => 'before',
 				'default'   => '#fff',
 				'selectors' => array(
@@ -298,7 +298,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			'labels_style_background_color',
 			array(
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Background Color', 'before-after-image-comparison-for-elementor' ),
+				'label'     => esc_html__( 'Background Color', 'majestic-before-after-image' ),
 				'selectors' => array(
 					'{{WRAPPER}} .twentytwenty-before-label:before' => 'background-color: {{VALUE}};',
 					'{{WRAPPER}} .twentytwenty-after-label:before' => 'background-color: {{VALUE}};',
@@ -311,7 +311,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			'labels_style_border_color',
 			array(
 				'type'      => Controls_Manager::COLOR,
-				'label'     => __( 'Border Color', 'before-after-image-comparison-for-elementor' ),
+				'label'     => __( 'Border Color', 'majestic-before-after-image' ),
 				'separator' => 'before',
 				'selectors' => array(
 					'{{WRAPPER}} .twentytwenty-before-label:before' => 'border-color: {{VALUE}};',
@@ -325,7 +325,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			'labels_style_border_width',
 			array(
 				'type'       => Controls_Manager::DIMENSIONS,
-				'label'      => __( 'Border Width', 'before-after-image-comparison-for-elementor' ),
+				'label'      => __( 'Border Width', 'majestic-before-after-image' ),
 				'size_units' => array( 'px' ),
 				'selectors'  => array(
 					'{{WRAPPER}} .twentytwenty-before-label:before' => 'border-style: solid; border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
@@ -339,7 +339,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			'labels_style_border_radius',
 			array(
 				'type'      => Controls_Manager::SLIDER,
-				'label'     => __( 'Border Radius', 'before-after-image-comparison-for-elementor' ),
+				'label'     => __( 'Border Radius', 'majestic-before-after-image' ),
 				'default'   => array(
 					'size' => 0,
 				),
@@ -360,7 +360,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'labels_style_button_padding',
 			array(
-				'label'      => esc_html__( 'Padding', 'before-after-image-comparison-for-elementor' ),
+				'label'      => esc_html__( 'Padding', 'majestic-before-after-image' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'separator'  => 'before',
 				'size_units' => array( 'px' ),
@@ -377,12 +377,12 @@ class MBAI_Elementor_Widget extends Widget_Base {
 	/**
 	 * Style > Handler.
 	 */
-	private function baice_style_handler_options() {
+	private function style_handler_options() {
 		// Tab.
 		$this->start_controls_section(
 			'section_handler_style',
 			array(
-				'label' => esc_html__( 'Handler', 'before-after-image-comparison-for-elementor' ),
+				'label' => esc_html__( 'Handler', 'majestic-before-after-image' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -392,7 +392,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			'handler_style_background_color',
 			array(
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Handler Color', 'before-after-image-comparison-for-elementor' ),
+				'label'     => esc_html__( 'Handler Color', 'majestic-before-after-image' ),
 				'default'   => '#fff',
 				'selectors' => array(
 					'{{WRAPPER}} .twentytwenty-handle'     => 'border-color: {{VALUE}};',
@@ -410,18 +410,15 @@ class MBAI_Elementor_Widget extends Widget_Base {
 	}
 
 	protected function render( $instance = array() ) {
-
-		// Get settings.
 		$settings = $this->get_settings();
 
 		?>
-		<div class="baice-before-after-wrap">
+		<div class="mbai-before-after-wrap">
 
-			<div class="baice-before-after-container" data-orientation="<?php echo $settings['slider_orientation']; ?>">
+			<div class="mbai-before-after-container" data-orientation="<?php echo $settings['slider_orientation']; ?>">
 
 				<?php $this->render_images(); ?>
 
-				<?php // $this->render_labels(); ?>
 			</div>
 		</div>
 		<?php
@@ -441,22 +438,5 @@ class MBAI_Elementor_Widget extends Widget_Base {
 
 		echo wp_get_attachment_image( $before_image['id'], $post_thumbnail_size, '', array( 'class' => 'img-before' ) );
 		echo wp_get_attachment_image( $after_image['id'], $post_thumbnail_size, '', array( 'class' => 'img-after' ) );
-	}
-
-	protected function render_labels() {
-		$settings = $this->get_settings();
-
-		$enable_labels = $settings['enable_labels'];
-		$before_text   = $settings['before_text'];
-		$after_text    = $settings['after_text'];
-
-		if ( 'yes' !== $enable_labels ) {
-			return;
-		}
-
-		?>
-		<a class="read-more-btn" href="<?php the_permalink(); ?>"><?php echo esc_html( $before_text ); ?></a>
-		<?php
-
 	}
 }
