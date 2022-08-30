@@ -15,5 +15,8 @@
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true
     }
+  },
+  "require": {
+    "ernilambar/wp-admin-notice": "^1.0"
   }
 }
