@@ -9,6 +9,8 @@
       no_overlay: false,
       move_slider_on_hover: false,
       move_with_handle_only: true,
+      handle_type: 'arrows',
+      handle_text: 'Drag',
       click_to_move: false
     }, options);
 
@@ -32,8 +34,12 @@
       var afterImg = container.find("img:last");
       container.append("<div class='twentytwenty-handle'></div>");
       var slider = container.find(".twentytwenty-handle");
-      slider.append("<span class='twentytwenty-" + beforeDirection + "-arrow'></span>");
-      slider.append("<span class='twentytwenty-" + afterDirection + "-arrow'></span>");
+			if (options.handle_type == 'text') {
+				slider.append("<span class='twentytwenty-handle-text'>" + options.handle_text + "</span>");
+			} else {
+				slider.append("<span class='twentytwenty-" + beforeDirection + "-arrow'></span>");
+				slider.append("<span class='twentytwenty-" + afterDirection + "-arrow'></span>");
+			}
       container.addClass("twentytwenty-container");
       beforeImg.addClass("twentytwenty-before");
       afterImg.addClass("twentytwenty-after");
