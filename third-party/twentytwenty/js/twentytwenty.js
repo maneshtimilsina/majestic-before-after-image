@@ -6,13 +6,17 @@
       orientation: 'horizontal',
       before_label: 'Before',
       after_label: 'After',
+      labels_status: 'hover',
       no_overlay: false,
+      overlay_status: true,
       move_slider_on_hover: false,
       move_with_handle_only: true,
       handle_type: 'arrows',
       handle_label: 'Drag',
       click_to_move: false
     }, options);
+
+    var overlay_class = ( true === options.overlay_status ) ? 'overlay-enabled' : 'overlay-disabled';
 
     return this.each(function() {
 
@@ -23,9 +27,9 @@
       var afterDirection = (sliderOrientation === 'vertical') ? 'up' : 'right';
 
 
-      container.wrap("<div class='twentytwenty-wrapper twentytwenty-" + sliderOrientation + "'></div>");
+      container.wrap("<div class='twentytwenty-wrapper twentytwenty-" + sliderOrientation + " twentytwenty-labels-status-" + options.labels_status + "'></div>");
       if(!options.no_overlay) {
-        container.append("<div class='twentytwenty-overlay'></div>");
+        container.append("<div class='twentytwenty-overlay " + overlay_class + " '></div>");
         var overlay = container.find(".twentytwenty-overlay");
         overlay.append("<div class='twentytwenty-before-label' data-content='"+options.before_label+"'></div>");
         overlay.append("<div class='twentytwenty-after-label' data-content='"+options.after_label+"'></div>");
