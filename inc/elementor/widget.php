@@ -30,12 +30,12 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		parent::__construct( $data, $args );
 
 		wp_register_style( 'mbai-twentytwenty', MBAI_URL . '/third-party/twentytwenty/css/twentytwenty.css', array(), MBAI_VERSION );
-		wp_register_style( 'mbai-widget', MBAI_URL . '/assets/css/main.css', array( 'mbai-twentytwenty' ), MBAI_VERSION );
+		wp_register_style( 'mbai-widget', MBAI_URL . '/assets/css/mbai-elementor.css', array( 'mbai-twentytwenty' ), MBAI_VERSION );
 
 		wp_register_script( 'mbai-event-move', MBAI_URL . '/third-party/event-move/event.move.js', array(), MBAI_VERSION, false );
 		wp_register_script( 'mbai-twentytwenty', MBAI_URL . '/third-party/twentytwenty/js/twentytwenty.js', array(), MBAI_VERSION, false );
 
-		wp_register_script( 'mbai-widget', MBAI_URL . '/assets/js/before-after-frontend.js', array( 'elementor-frontend', 'mbai-event-move', 'mbai-twentytwenty' ), MBAI_VERSION, true );
+		wp_register_script( 'mbai-widget', MBAI_URL . '/assets/js/mbai-elementor.js', array( 'elementor-frontend', 'mbai-event-move', 'mbai-twentytwenty' ), MBAI_VERSION, true );
 	}
 
 	/**
