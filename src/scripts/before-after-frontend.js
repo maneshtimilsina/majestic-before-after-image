@@ -19,10 +19,10 @@ class MBAIWidgetHandlerClass extends elementorModules.frontend.handlers.Base {
 	bindEvents() {
 		const data = this.elements.$mainWrapper.data('mbai');
 
-		const { orientation, before_label, after_label, handler_offset, move_slider_on_hover } = data;
+		const { orientation, before_label, after_label, handle_offset, move_slider_on_hover } = data;
 
 		this.elements.$container.twentytwenty( {
-			default_offset_pct: handler_offset,
+			default_offset_pct: handle_offset,
 			orientation: orientation,
 			before_label: before_label,
 			after_label: after_label,
