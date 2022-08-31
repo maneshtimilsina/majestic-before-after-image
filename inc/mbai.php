@@ -13,7 +13,7 @@
 final class MBAI {
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 *
 	 * @since 1.0.0
 	 */
@@ -43,6 +43,9 @@ final class MBAI {
 	 * @since 1.0.0
 	 */
 	public function init_elementor() {
+		// Load admin page.
+		require_once MBAI_DIR . '/inc/admin-page/admin-page.php';
+
 		// Check if Elementor installed and activated.
 		if ( ! did_action( 'elementor/loaded' ) ) {
 			add_action( 'admin_notices', array( $this, 'admin_notice_missing_elementor' ) );
