@@ -126,6 +126,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 
 		$this->style_labels_options();
 		$this->style_handle_options();
+		$this->style_handle_text_options();
 	}
 
 	/**
@@ -316,6 +317,9 @@ class MBAI_Elementor_Widget extends Widget_Base {
 					'4' => esc_html__( 'Style 4', 'majestic-before-after-image' ),
 					'5' => esc_html__( 'Style 5', 'majestic-before-after-image' ),
 				),
+				'condition' => array(
+					'handle_type' => 'arrows',
+				),
 			)
 		);
 
@@ -324,6 +328,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			array(
 				'label'   => esc_html__( 'Default Offset', 'majestic-before-after-image' ),
 				'type'    => Controls_Manager::SLIDER,
+				'separator' => 'before',
 				'default' => array(
 					'size' => 0.5,
 				),
@@ -341,6 +346,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			'move_slider_on_hover',
 			array(
 				'label'     => esc_html__( 'Enable On Mouse Hover', 'majestic-before-after-image' ),
+				'description'     => esc_html__( 'If enabled, handle will move on mouse hover instead of dragging.', 'majestic-before-after-image' ),
 				'type'      => Controls_Manager::SWITCHER,
 				'label_on'  => esc_html__( 'Yes', 'majestic-before-after-image' ),
 				'label_off' => esc_html__( 'No', 'majestic-before-after-image' ),
@@ -476,6 +482,98 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->end_controls_section();
 	}
 
+	private function style_handle_text_options() {
+		// Tab.
+		$this->start_controls_section(
+			'section_handle_text_style',
+			array(
+				'label'     => esc_html__( 'Handle Text', 'majestic-before-after-image' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
+				'condition' => array(
+					'enable_overlay' => 'yes',
+					'handle_type' => 'text',
+					'enable_labels!' => 'never',
+				),
+			)
+		);
+
+		// Handle text typography.
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'handle_text_style_typography',
+				'global'   => array(
+					'default' => Global_Typography::TYPOGRAPHY_ACCENT,
+				),
+				'selector' => '{{WRAPPER}} .twentytwenty-handle-text',
+			)
+		);
+
+		// Handle text color.
+		$this->add_control(
+			'handle_text_style_color',
+			array(
+				'type'      => Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Color', 'majestic-before-after-image' ),
+				'separator' => 'before',
+				'default'   => '#fff',
+				'selectors' => array(
+					'{{WRAPPER}} .twentytwenty-handle-text' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		// Handle text background color.
+		$this->add_control(
+			'handle_text_style_background_color',
+			array(
+				'type'      => Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Background Color', 'majestic-before-after-image' ),
+				'selectors' => array(
+					'{{WRAPPER}} .twentytwenty-handle-text' => 'background-color: {{VALUE}};',
+				),
+			)
+		);
+
+		// Handle text border radius.
+		$this->add_control(
+			'handle_text_style_border_radius',
+			array(
+				'type'      => Controls_Manager::SLIDER,
+				'label'     => esc_html__( 'Border Radius', 'majestic-before-after-image' ),
+				'separator'  => 'before',
+				'default'   => array(
+					'size' => 0,
+				),
+				'range'     => array(
+					'px' => array(
+						'min' => 0,
+						'max' => 100,
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .twentytwenty-handle-text' => 'border-radius: {{SIZE}}{{UNIT}}',
+				),
+			)
+		);
+
+		// Handle text padding.
+		$this->add_responsive_control(
+			'handle_text_style_button_padding',
+			array(
+				'label'      => esc_html__( 'Padding', 'majestic-before-after-image' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'separator'  => 'before',
+				'size_units' => array( 'px' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .twentytwenty-handle-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				),
+			)
+		);
+
+		$this->end_controls_section();
+	}
+
 	/**
 	 * Style > Handle.
 	 */
@@ -531,7 +629,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			'move_slider_on_hover' => ( 'yes' === $settings['move_slider_on_hover'] ) ? true : false,
 		);
 		?>
-		<div class="mbai-before-after-wrap handler-style-<?php echo absint( $settings['handle_style'] ); ?>" data-mbai='<?php echo wp_json_encode( $data ); ?>'>
+		<div class="mbai-before-after-wrap handle-type-<?php echo esc_attr( $settings['handle_type'] ); ?> handle-style-<?php echo absint( $settings['handle_style'] ); ?>" data-mbai='<?php echo wp_json_encode( $data ); ?>'>
 
 			<div class="mbai-before-after-container">
 
