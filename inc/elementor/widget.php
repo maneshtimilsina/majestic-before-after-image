@@ -17,42 +17,109 @@ use \Elementor\Core\Kits\Documents\Tabs\Global_Typography;
  * @since 1.0.0
  */
 class MBAI_Elementor_Widget extends Widget_Base {
+
+	/**
+	 * Constructor.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $data Widget data.
+	 * @param array $args Widget arguments.
+	 */
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );
+
+		wp_register_style( 'mbai-twentytwenty', MBAI_URL . '/third-party/twentytwenty/css/twentytwenty.css', array(), MBAI_VERSION );
+		wp_register_style( 'mbai-widget', MBAI_URL . '/assets/css/main.css', array( 'mbai-twentytwenty' ), MBAI_VERSION );
 
 		wp_register_script( 'mbai-event-move', MBAI_URL . '/third-party/event-move/event.move.js', array(), MBAI_VERSION, false );
 		wp_register_script( 'mbai-twentytwenty', MBAI_URL . '/third-party/twentytwenty/js/twentytwenty.js', array(), MBAI_VERSION, false );
 
 		wp_register_script( 'mbai-widget', MBAI_URL . '/assets/js/before-after-frontend.js', array( 'elementor-frontend', 'mbai-event-move', 'mbai-twentytwenty' ), MBAI_VERSION, true );
-
-		wp_register_style( 'mbai-twentytwenty', MBAI_URL . '/third-party/twentytwenty/css/twentytwenty.css', array(), MBAI_VERSION );
-		wp_register_style( 'mbai-widget', MBAI_URL . '/assets/css/main.css', array( 'mbai-twentytwenty' ), MBAI_VERSION );
 	}
 
-	public function get_script_depends() {
-		return array( 'mbai-widget' );
-	}
-
-	public function get_style_depends() {
-		return array( 'mbai-widget' );
-	}
-
+	/**
+	 * Get widget name.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string Widget name.
+	 */
 	public function get_name() {
 		return 'mbai-before-after-image';
 	}
 
+	/**
+	 * Get widget title.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string Widget title.
+	 */
 	public function get_title() {
 		return esc_html__( 'Majestic Before After Image', 'majestic-before-after-image' );
 	}
 
+	/**
+	 * Get script handles on which widget depends.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array Script handles.
+	 */
+	public function get_script_depends() {
+		return array( 'mbai-widget' );
+	}
+
+	/**
+	 * Get style handles on which widget depends.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array Style handles.
+	 */
+	public function get_style_depends() {
+		return array( 'mbai-widget' );
+	}
+
+	/**
+	 * Get widget icon.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string Widget icon.
+	 */
 	public function get_icon() {
 		return 'eicon-h-align-stretch';
 	}
 
+	/**
+	 * Get widget categories.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array Widget categories.
+	 */
 	public function get_categories() {
 		return array( 'mbai-widgets' );
 	}
 
+	/**
+	 * Get widget keywords.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array Widget keywords.
+	 */
+	public function get_keywords() {
+		return array( 'image', 'before', 'after', 'comparison' );
+	}
+
+	/**
+	 * Register widget controls.
+	 *
+	 * @since 1.0.0
+	 */
 	protected function register_controls() {
 		$this->content_general_options();
 		$this->content_handle_options();
@@ -208,6 +275,31 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			array(
 				'label' => esc_html__( 'Handle', 'majestic-before-after-image' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
+			)
+		);
+
+		$this->add_control(
+			'handle_type',
+			array(
+				'label'   => esc_html__( 'Handle Type', 'majestic-before-after-image' ),
+				'type'    => Controls_Manager::SELECT,
+				'default' => 'arrows',
+				'options' => array(
+					'arrows' => esc_html__( 'Arrows', 'majestic-before-after-image' ),
+					'text'   => esc_html__( 'Text', 'majestic-before-after-image' ),
+				),
+			)
+		);
+
+		$this->add_control(
+			'handle_label',
+			array(
+				'label'     => esc_html__( 'Handle Text', 'majestic-before-after-image' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => esc_html__( 'Drag', 'majestic-before-after-image' ),
+				'condition' => array(
+					'handle_type' => 'text',
+				),
 			)
 		);
 
@@ -419,6 +511,13 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->end_controls_section();
 	}
 
+	/**
+	 * Render widget output.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $instance Widget instance.
+	 */
 	protected function render( $instance = array() ) {
 		$settings = $this->get_settings();
 
@@ -426,10 +525,11 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			'orientation'          => $settings['slider_orientation'],
 			'before_label'         => $settings['before_label'],
 			'after_label'          => $settings['after_label'],
-			'handle_offset'       => $settings['handle_offset']['size'],
+			'handle_type'          => $settings['handle_type'],
+			'handle_label'         => $settings['handle_label'],
+			'handle_offset'        => $settings['handle_offset']['size'],
 			'move_slider_on_hover' => ( 'yes' === $settings['move_slider_on_hover'] ) ? true : false,
 		);
-
 		?>
 		<div class="mbai-before-after-wrap handler-style-<?php echo absint( $settings['handle_style'] ); ?>" data-mbai='<?php echo wp_json_encode( $data ); ?>'>
 
@@ -437,11 +537,17 @@ class MBAI_Elementor_Widget extends Widget_Base {
 
 				<?php $this->render_images(); ?>
 
-			</div>
-		</div>
+			</div><!-- .mbai-before-after-container -->
+
+		</div><!-- .mbai-before-after-wrap -->
 		<?php
 	}
 
+	/**
+	 * Render before after images.
+	 *
+	 * @since 1.0.0
+	 */
 	protected function render_images() {
 		$settings = $this->get_settings();
 

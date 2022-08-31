@@ -5,6 +5,11 @@
  * @package MBAI
  */
 
+/**
+ * Main MBAI class.
+ *
+ * @since 1.0.0
+ */
 final class MBAI {
 
 	/**
@@ -13,11 +18,10 @@ final class MBAI {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-
 		// Load translation.
 		add_action( 'init', array( $this, 'i18n' ) );
 
-		// Init Plugin
+		// Init plugin.
 		add_action( 'plugins_loaded', array( $this, 'init_elementor' ) );
 	}
 
@@ -63,7 +67,7 @@ final class MBAI {
 			'<strong>' . esc_html__( 'Elementor', 'majestic-before-after-image' ) . '</strong>'
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 }

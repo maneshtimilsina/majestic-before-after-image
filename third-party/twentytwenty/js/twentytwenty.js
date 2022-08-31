@@ -10,7 +10,7 @@
       move_slider_on_hover: false,
       move_with_handle_only: true,
       handle_type: 'arrows',
-      handle_text: 'Drag',
+      handle_label: 'Drag',
       click_to_move: false
     }, options);
 
@@ -35,7 +35,7 @@
       container.append("<div class='twentytwenty-handle'></div>");
       var slider = container.find(".twentytwenty-handle");
 			if (options.handle_type == 'text') {
-				slider.append("<span class='twentytwenty-handle-text'>" + options.handle_text + "</span>");
+				slider.append("<span class='twentytwenty-handle-text'>" + options.handle_label + "</span>");
 			} else {
 				slider.append("<span class='twentytwenty-" + beforeDirection + "-arrow'></span>");
 				slider.append("<span class='twentytwenty-" + afterDirection + "-arrow'></span>");
