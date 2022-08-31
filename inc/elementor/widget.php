@@ -621,11 +621,13 @@ class MBAI_Elementor_Widget extends Widget_Base {
 
 		$data = array(
 			'orientation'          => $settings['slider_orientation'],
+			'labels_status'        => $settings['enable_labels'],
 			'before_label'         => $settings['before_label'],
 			'after_label'          => $settings['after_label'],
 			'handle_type'          => $settings['handle_type'],
 			'handle_label'         => $settings['handle_label'],
 			'handle_offset'        => $settings['handle_offset']['size'],
+			'overlay_status'       => ( 'yes' === $settings['enable_overlay'] ) ? true : false,
 			'move_slider_on_hover' => ( 'yes' === $settings['move_slider_on_hover'] ) ? true : false,
 		);
 		?>
