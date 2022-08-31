@@ -1,0 +1,97 @@
+@mixin breakpoint($min) {
+	@media (min-width: $min) {
+		@content;
+	}
+}
+
+$xs: 20em; // 320px
+$sm: 30em; // 480px
+$md: 48em; // 768px
+$lg: 64em; // 1024px
+$xl: 80em; // 1280px
+$xxl: 90em; // 1440px
+
+.is-hidden {
+	display: none;
+}
+
+.wpc-wrap {
+	p {
+		font-size: 15px;
+	}
+
+	.wpc-header {
+		padding-bottom: 2px;
+	}
+
+	.wpc-main-content {
+		display: flex;
+		gap: 20px;
+		flex-direction: column;
+		margin-top: 25px;
+
+		@include breakpoint($lg) {
+			flex-direction: row;
+		}
+	}
+
+	.wpc-tab-contents {
+		margin-top: 20px;
+	}
+
+	.wpc-content-left {
+		width: 100%;
+	}
+
+	.wpc-content-right {
+		flex: 0 0 250px;
+	}
+
+	.wpc-tab-content {
+		display: none;
+	}
+
+	.wpc-grid {
+		display: grid;
+		gap: 20px;
+		grid-template-columns: 1fr;
+
+		@include breakpoint($md) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+		@include breakpoint($xl) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+
+		h2,
+		h3 {
+			color: #333;
+		}
+
+		p {
+			color: #555;
+		}
+
+		h3 span {
+			margin-right: 5px;
+			color: #2271b1;
+		}
+	}
+
+	.wpc-card {
+		border: 1px #ddd solid;
+		border-radius: 5px;
+		background-color: #fff;
+		color: #333;
+		padding: 10px 20px;
+	}
+
+	.wpc-box {
+		margin-bottom: 40px;
+
+		ul,
+		ol {
+			margin-left: 1.3em;
+		}
+	}
+}
