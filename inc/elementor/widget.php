@@ -212,9 +212,6 @@ class MBAI_Elementor_Widget extends Widget_Base {
 					'never'  => esc_html__( 'Never', 'majestic-before-after-image' ),
 				),
 				'separator' => 'before',
-				'condition' => array(
-					'enable_overlay' => 'yes',
-				),
 			)
 		);
 
@@ -225,7 +222,6 @@ class MBAI_Elementor_Widget extends Widget_Base {
 				'type'      => Controls_Manager::TEXT,
 				'default'   => esc_html__( 'Before', 'majestic-before-after-image' ),
 				'condition' => array(
-					'enable_overlay' => 'yes',
 					'enable_labels!' => 'never',
 				),
 			)
@@ -238,7 +234,6 @@ class MBAI_Elementor_Widget extends Widget_Base {
 				'type'      => Controls_Manager::TEXT,
 				'default'   => esc_html__( 'After', 'majestic-before-after-image' ),
 				'condition' => array(
-					'enable_overlay' => 'yes',
 					'enable_labels!' => 'never',
 				),
 			)
