@@ -23,6 +23,9 @@ final class MBAI {
 
 		// Init plugin.
 		add_action( 'plugins_loaded', array( $this, 'init_elementor' ) );
+
+		// Admin notice.
+		add_action( 'admin_init', array( $this, 'nifty_cs_admin_notice' ) );
 	}
 
 	/**
@@ -70,6 +73,19 @@ final class MBAI {
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
+	/**
+	 * Add admin notice.
+	 *
+	 * @since 1.0.0
+	 */
+	public function nifty_cs_admin_notice() {
+		\Nilambar\AdminNotice\Notice::init(
+			array(
+				'slug' => MBAI_SLUG,
+				'name' => esc_html__( 'Majestic Before After Image', 'majestic-before-after-image' ),
+			)
+		);
+	}
 }
 
 new MBAI();
