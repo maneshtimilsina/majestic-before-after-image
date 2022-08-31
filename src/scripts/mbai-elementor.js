@@ -35,13 +35,8 @@ class MBAIWidgetHandlerClass extends elementorModules.frontend.handlers.Base {
 
 jQuery( window ).on( 'elementor/frontend/init', () => {
 	const addMBAIWidgetHandler = ( $element ) => {
-		elementorFrontend.elementsHandler.addHandler( MBAIWidgetHandlerClass, {
-			$element,
-		} );
+		elementorFrontend.elementsHandler.addHandler( MBAIWidgetHandlerClass, { $element } );
 	};
 
-	elementorFrontend.hooks.addAction(
-		'frontend/element_ready/mbai-before-after-image.default',
-		addMBAIWidgetHandler
-	);
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/mbai-before-after-image.default', addMBAIWidgetHandler );
 } );

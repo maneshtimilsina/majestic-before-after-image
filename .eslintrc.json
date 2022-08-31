@@ -16,6 +16,7 @@
   "rules": {
     "no-console": "error",
     "no-alert": "error",
+    "camelcase": "warn",
     "vars-on-top": "warn"
   }
 }
