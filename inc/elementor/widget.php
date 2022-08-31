@@ -310,7 +310,6 @@ class MBAI_Elementor_Widget extends Widget_Base {
 					'2' => esc_html__( 'Style 2', 'majestic-before-after-image' ),
 					'3' => esc_html__( 'Style 3', 'majestic-before-after-image' ),
 					'4' => esc_html__( 'Style 4', 'majestic-before-after-image' ),
-					'5' => esc_html__( 'Style 5', 'majestic-before-after-image' ),
 				),
 				'condition' => array(
 					'handle_type' => 'arrows',
@@ -537,13 +536,13 @@ class MBAI_Elementor_Widget extends Widget_Base {
 
 		// Handle text border radius.
 		$this->add_control(
-			'handle_text_style_border_radius',
+			'handle_text_style_size',
 			array(
 				'type'      => Controls_Manager::SLIDER,
-				'label'     => esc_html__( 'Border Radius', 'majestic-before-after-image' ),
+				'label'     => esc_html__( 'Circle Size', 'majestic-before-after-image' ),
 				'separator' => 'before',
 				'default'   => array(
-					'size' => 0,
+					'size' => 50,
 				),
 				'range'     => array(
 					'px' => array(
@@ -552,21 +551,9 @@ class MBAI_Elementor_Widget extends Widget_Base {
 					),
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .twentytwenty-handle-text' => 'border-radius: {{SIZE}}{{UNIT}}',
-				),
-			)
-		);
-
-		// Handle text padding.
-		$this->add_responsive_control(
-			'handle_text_style_button_padding',
-			array(
-				'label'      => esc_html__( 'Padding', 'majestic-before-after-image' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'separator'  => 'before',
-				'size_units' => array( 'px' ),
-				'selectors'  => array(
-					'{{WRAPPER}} .twentytwenty-handle-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+					'{{WRAPPER}} .twentytwenty-handle' => 'height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .handle-type-text .twentytwenty-handle' => 'width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .handle-type-text .twentytwenty-handle-text' => 'height: {{SIZE}}{{UNIT}}',
 				),
 			)
 		);
@@ -600,8 +587,6 @@ class MBAI_Elementor_Widget extends Widget_Base {
 					'{{WRAPPER}} .twentytwenty-horizontal .twentytwenty-handle:after' => 'background: {{VALUE}};',
 					'{{WRAPPER}} .twentytwenty-vertical .twentytwenty-handle:before' => 'background: {{VALUE}};',
 					'{{WRAPPER}} .twentytwenty-vertical .twentytwenty-handle:after' => 'background: {{VALUE}};',
-					'{{WRAPPER}} .twentytwenty-left-arrow' => 'border-right-color: {{VALUE}};',
-					'{{WRAPPER}} .twentytwenty-right-arrow' => 'border-left-color: {{VALUE}};',
 				),
 			)
 		);

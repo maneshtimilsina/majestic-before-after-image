@@ -1,0 +1,129 @@
+.mbai-before-after-wrap {
+	.twentytwenty-horizontal .twentytwenty-handle:before,
+	.twentytwenty-horizontal .twentytwenty-handle:after {
+		box-shadow: none;
+	}
+
+	&.handle-style-2 {
+		.twentytwenty-horizontal .twentytwenty-handle {
+			height: 70px;
+			width: 30px;
+		}
+
+		.twentytwenty-horizontal .twentytwenty-handle:before {
+			margin-bottom: 38px;
+		}
+
+		.twentytwenty-horizontal .twentytwenty-handle:after {
+			margin-top: 38px;
+		}
+
+		.twentytwenty-vertical .twentytwenty-handle {
+			height: 30px;
+			width: 70px;
+		}
+
+		.twentytwenty-vertical .twentytwenty-handle:before {
+			margin-left: 35px;
+		}
+
+		.twentytwenty-vertical .twentytwenty-handle:after {
+			margin-right: 35px;
+		}
+	}
+
+	&.handle-style-3 {
+		.twentytwenty-horizontal .twentytwenty-handle {
+			border-radius: 0px;
+			width: 30px;
+		}
+
+		.twentytwenty-vertical .twentytwenty-handle {
+			border-radius: 0px;
+			height: 30px;
+		}
+	}
+
+	&.handle-style-4 {
+		.twentytwenty-horizontal .twentytwenty-handle,
+		.twentytwenty-vertical .twentytwenty-handle {
+		   border-radius: 6px;
+		   background-color: #fff;
+		}
+
+		.twentytwenty-horizontal .twentytwenty-handle {
+		    height: 35px;
+		    width: 30px;
+		}
+
+		.twentytwenty-vertical .twentytwenty-handle {
+		    height: 30px;
+		    width: 35px;
+		}
+
+		.twentytwenty-left-arrow {
+			border-right-color: #000;
+		}
+
+		.twentytwenty-right-arrow {
+		    border-left-color: #000;
+		}
+
+		.twentytwenty-down-arrow {
+			border-top-color: #000;
+		}
+
+		.twentytwenty-up-arrow {
+			border-bottom-color: #000;
+		}
+	}
+
+	.twentytwenty-labels-status-always {
+		.twentytwenty-before-label,
+		.twentytwenty-after-label {
+			opacity: 1;
+		}
+	}
+
+	.twentytwenty-overlay.overlay-disabled {
+		background: none;
+	}
+
+	&.handle-type-text {
+		.twentytwenty-handle {
+			height: 50px;
+			width: 50px;
+			margin-left: -28px;
+			margin-top: -28px;
+		}
+
+		.twentytwenty-horizontal .twentytwenty-handle:before,
+		.twentytwenty-horizontal .twentytwenty-handle:after {
+			z-index: -1;
+		}
+
+		.twentytwenty-horizontal .twentytwenty-handle:before {
+			margin-bottom: 28px;
+		}
+
+		.twentytwenty-horizontal .twentytwenty-handle:after{
+			margin-top: 28px;
+		}
+
+		.twentytwenty-vertical .twentytwenty-handle:before {
+			margin-left: 28px;
+		}
+
+		.twentytwenty-vertical .twentytwenty-handle:after {
+			margin-right: 28px;
+		}
+
+		.twentytwenty-handle-text {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 50px;
+			border-radius: 100%;
+		}
+	}
+}
