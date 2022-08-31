@@ -23,5 +23,10 @@ define( 'MBAI_BASE_FILENAME', plugin_basename( __FILE__ ) );
 define( 'MBAI_DIR', rtrim( plugin_dir_path( __FILE__ ), '/' ) );
 define( 'MBAI_URL', rtrim( plugin_dir_url( __FILE__ ), '/' ) );
 
+// Init autoload.
+if ( file_exists( MBAI_DIR . '/vendor/autoload.php' ) ) {
+	require_once MBAI_DIR . '/vendor/autoload.php';
+}
+
 // Init plugin.
 require_once MBAI_DIR . '/inc/mbai.php';

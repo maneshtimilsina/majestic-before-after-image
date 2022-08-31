@@ -302,10 +302,10 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->add_control(
 			'handle_style',
 			array(
-				'label'   => esc_html__( 'Handle Style', 'majestic-before-after-image' ),
-				'type'    => Controls_Manager::SELECT,
-				'default' => '1',
-				'options' => array(
+				'label'     => esc_html__( 'Handle Style', 'majestic-before-after-image' ),
+				'type'      => Controls_Manager::SELECT,
+				'default'   => '1',
+				'options'   => array(
 					'1' => esc_html__( 'Style 1', 'majestic-before-after-image' ),
 					'2' => esc_html__( 'Style 2', 'majestic-before-after-image' ),
 					'3' => esc_html__( 'Style 3', 'majestic-before-after-image' ),
@@ -321,13 +321,13 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->add_control(
 			'handle_offset',
 			array(
-				'label'   => esc_html__( 'Default Offset', 'majestic-before-after-image' ),
-				'type'    => Controls_Manager::SLIDER,
+				'label'     => esc_html__( 'Default Offset', 'majestic-before-after-image' ),
+				'type'      => Controls_Manager::SLIDER,
 				'separator' => 'before',
-				'default' => array(
+				'default'   => array(
 					'size' => 0.5,
 				),
-				'range'   => array(
+				'range'     => array(
 					'px' => array(
 						'max'  => 1,
 						'min'  => 0.1,
@@ -340,12 +340,12 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->add_control(
 			'move_slider_on_hover',
 			array(
-				'label'     => esc_html__( 'Enable On Mouse Hover', 'majestic-before-after-image' ),
-				'description'     => esc_html__( 'If enabled, handle will move on mouse hover instead of dragging.', 'majestic-before-after-image' ),
-				'type'      => Controls_Manager::SWITCHER,
-				'label_on'  => esc_html__( 'Yes', 'majestic-before-after-image' ),
-				'label_off' => esc_html__( 'No', 'majestic-before-after-image' ),
-				'default'   => 'no',
+				'label'       => esc_html__( 'Enable On Mouse Hover', 'majestic-before-after-image' ),
+				'description' => esc_html__( 'If enabled, handle will move on mouse hover instead of dragging.', 'majestic-before-after-image' ),
+				'type'        => Controls_Manager::SWITCHER,
+				'label_on'    => esc_html__( 'Yes', 'majestic-before-after-image' ),
+				'label_off'   => esc_html__( 'No', 'majestic-before-after-image' ),
+				'default'     => 'no',
 			)
 		);
 
@@ -477,6 +477,11 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		$this->end_controls_section();
 	}
 
+	/**
+	 * Add handle text style options.
+	 *
+	 * @since 1.0.0
+	 */
 	private function style_handle_text_options() {
 		// Tab.
 		$this->start_controls_section(
@@ -486,7 +491,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'enable_overlay' => 'yes',
-					'handle_type' => 'text',
+					'handle_type'    => 'text',
 					'enable_labels!' => 'never',
 				),
 			)
@@ -536,7 +541,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			array(
 				'type'      => Controls_Manager::SLIDER,
 				'label'     => esc_html__( 'Border Radius', 'majestic-before-after-image' ),
-				'separator'  => 'before',
+				'separator' => 'before',
 				'default'   => array(
 					'size' => 0,
 				),
