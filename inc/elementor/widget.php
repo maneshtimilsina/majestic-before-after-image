@@ -179,7 +179,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 				'type'      => Controls_Manager::SWITCHER,
 				'label_on'  => esc_html__( 'Yes', 'majestic-before-after-image' ),
 				'label_off' => esc_html__( 'No', 'majestic-before-after-image' ),
-				'default'   => 'yes',
+				'default'   => 'no',
 				'separator' => 'before',
 			)
 		);
@@ -292,7 +292,36 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			array(
 				'label'     => esc_html__( 'Handle Text', 'majestic-before-after-image' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'Drag', 'majestic-before-after-image' ),
+				'default'   => esc_html__( 'DRAG', 'majestic-before-after-image' ),
+				'condition' => array(
+					'handle_type' => 'text',
+				),
+			)
+		);
+
+		// Handle text circle size.
+		$this->add_control(
+			'handle_text_style_size',
+			array(
+				'type'      => Controls_Manager::SLIDER,
+				'label'     => esc_html__( 'Circle Size', 'majestic-before-after-image' ),
+				'default'   => array(
+					'size' => 50,
+				),
+				'range'     => array(
+					'px' => array(
+						'min' => 0,
+						'max' => 200,
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .handle-type-text .twentytwenty-handle' => 'height: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}}; margin-left: calc(-{{SIZE}}{{UNIT}} / 2 - 3px); margin-top: calc(-{{SIZE}}{{UNIT}} / 2 - 3px)',
+					'{{WRAPPER}} .handle-type-text .twentytwenty-handle-text' => 'height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .handle-type-text .twentytwenty-horizontal .twentytwenty-handle:before' => 'margin-bottom: calc({{SIZE}}{{UNIT}} / 2 + 3px);',
+					'{{WRAPPER}} .handle-type-text .twentytwenty-horizontal .twentytwenty-handle:after' => 'margin-top: calc({{SIZE}}{{UNIT}} / 2 + 3px);',
+					'{{WRAPPER}} .handle-type-text .twentytwenty-vertical .twentytwenty-handle:before' => 'margin-left: calc({{SIZE}}{{UNIT}} / 2 + 3px);',
+					'{{WRAPPER}} .handle-type-text .twentytwenty-vertical .twentytwenty-handle:after' => 'margin-right: calc({{SIZE}}{{UNIT}} / 2 + 3px);',
+				),
 				'condition' => array(
 					'handle_type' => 'text',
 				),
@@ -310,6 +339,8 @@ class MBAI_Elementor_Widget extends Widget_Base {
 					'2' => esc_html__( 'Style 2', 'majestic-before-after-image' ),
 					'3' => esc_html__( 'Style 3', 'majestic-before-after-image' ),
 					'4' => esc_html__( 'Style 4', 'majestic-before-after-image' ),
+					'5' => esc_html__( 'Style 5', 'majestic-before-after-image' ),
+					'6' => esc_html__( 'Style 6', 'majestic-before-after-image' ),
 				),
 				'condition' => array(
 					'handle_type' => 'arrows',
@@ -362,7 +393,6 @@ class MBAI_Elementor_Widget extends Widget_Base {
 				'label'     => esc_html__( 'Labels', 'majestic-before-after-image' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
-					'enable_overlay' => 'yes',
 					'enable_labels!' => 'never',
 				),
 			)
@@ -489,9 +519,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 				'label'     => esc_html__( 'Handle Text', 'majestic-before-after-image' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
-					'enable_overlay' => 'yes',
-					'handle_type'    => 'text',
-					'enable_labels!' => 'never',
+					'handle_type' => 'text',
 				),
 			)
 		);
@@ -515,7 +543,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'label'     => esc_html__( 'Color', 'majestic-before-after-image' ),
 				'separator' => 'before',
-				'default'   => '#fff',
+				'default'   => '#000',
 				'selectors' => array(
 					'{{WRAPPER}} .twentytwenty-handle-text' => 'color: {{VALUE}};',
 				),
@@ -530,30 +558,6 @@ class MBAI_Elementor_Widget extends Widget_Base {
 				'label'     => esc_html__( 'Background Color', 'majestic-before-after-image' ),
 				'selectors' => array(
 					'{{WRAPPER}} .twentytwenty-handle-text' => 'background-color: {{VALUE}};',
-				),
-			)
-		);
-
-		// Handle text border radius.
-		$this->add_control(
-			'handle_text_style_size',
-			array(
-				'type'      => Controls_Manager::SLIDER,
-				'label'     => esc_html__( 'Circle Size', 'majestic-before-after-image' ),
-				'separator' => 'before',
-				'default'   => array(
-					'size' => 50,
-				),
-				'range'     => array(
-					'px' => array(
-						'min' => 0,
-						'max' => 100,
-					),
-				),
-				'selectors' => array(
-					'{{WRAPPER}} .twentytwenty-handle' => 'height: {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}} .handle-type-text .twentytwenty-handle' => 'width: {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}} .handle-type-text .twentytwenty-handle-text' => 'height: {{SIZE}}{{UNIT}}',
 				),
 			)
 		);
@@ -582,7 +586,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 				'label'     => esc_html__( 'Handle Color', 'majestic-before-after-image' ),
 				'default'   => '#fff',
 				'selectors' => array(
-					'{{WRAPPER}} .twentytwenty-handle'     => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .twentytwenty-handle' => 'border-color: {{VALUE}};',
 					'{{WRAPPER}} .twentytwenty-horizontal .twentytwenty-handle:before' => 'background: {{VALUE}};',
 					'{{WRAPPER}} .twentytwenty-horizontal .twentytwenty-handle:after' => 'background: {{VALUE}};',
 					'{{WRAPPER}} .twentytwenty-vertical .twentytwenty-handle:before' => 'background: {{VALUE}};',

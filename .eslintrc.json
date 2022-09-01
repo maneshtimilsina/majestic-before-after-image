@@ -9,6 +9,7 @@
   },
   "globals": {
     "wp": true,
+    "mbaiAdmin": true,
     "elementorModules": true,
     "elementorFrontend": true,
     "jQuery": true

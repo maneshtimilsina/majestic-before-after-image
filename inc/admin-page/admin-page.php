@@ -28,7 +28,7 @@ class MBAI_Admin_Page {
 	 * @since 1.0.0
 	 */
 	public function add_admin_page() {
-		add_menu_page( esc_html__( 'Majestic Before After Image', 'majestic-before-after-image' ), esc_html__( 'Majestic Before After Image', 'majestic-before-after-image' ), 'manage_options', 'majestic-before-after-image', array( $this, 'render_admin_page' ), 'dashicons-format-image' );
+		add_menu_page( esc_html__( 'Majestic Before After Image', 'majestic-before-after-image' ), esc_html__( 'Majestic Before After Image', 'majestic-before-after-image' ), 'manage_options', 'majestic-before-after-image', array( $this, 'render_admin_page' ), 'dashicons-image-flip-horizontal' );
 	}
 
 	/**
@@ -91,9 +91,8 @@ class MBAI_Admin_Page {
 						<div class="wpc-tab-content" id="tab-welcome">
 							<div class="wpc-grid">
 								<div class="wpc-card">
-									<h3><span class="dashicons dashicons-admin-customizer"></span>Customize Coming Soon</h3>
-									<p>You can customize plugin options using Customizer.</p>
-									<p><a href="#" class="button button-primary">Customize</a></p>
+									<h3><span class="dashicons dashicons-image-flip-horizontal"></span>Elementor Widget</h3>
+									<p>Edit page with Elementor, drag and drop the 'Majestic Before After Image' element to the section you want. And start customizing the widget.</p>
 								</div><!-- .wpc-card -->
 
 								<div class="wpc-card">
@@ -117,8 +116,18 @@ class MBAI_Admin_Page {
 
 						<div class="wpc-tab-content" id="tab-features">
 
-							<p>Buy pro plugin to unlock beautiful premade themes.</p>
-
+							<ul class="features-list">
+								<li>Horizontal / Vertical Orientation</li>
+								<li>Handle movement control - Swipe or Hover</li>
+								<li>Customizable before and after labels</li>
+								<li>Labels visibility - On Hover, Always or Never</li>
+								<li>Enable / disable overlay</li>
+								<li>Default handle offset position</li>
+								<li>Multiple handle styles</li>
+								<li>Handle types - Arrows or Text</li>
+								<li>Image size option</li>
+								<li>Typography and color options</li>
+							</ul>
 
 						</div><!-- .wpc-tab-content -->
 
