@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Majestic Before After Image
  * Plugin URI: https://wpconcern.com/plugins/majestic-before-after-image/
- * Description: Compare before and after versions of the image.
+ * Description: Majestic Before After Image is an Elementor addon to show the comparison of two images with a draggable handle.
  * Version: 1.0.0
  * Author: WP Concern
  * Author URI: https://wpconcern.com/
