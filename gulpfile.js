@@ -31,7 +31,7 @@ const development = environments.development;
 
 // Style.
 gulp.task( 'style', function() {
-	return gulp.src( rootPath + 'src/sass/*.scss' )
+	return gulp.src( rootPath + 'resources/sass/*.scss' )
 		.pipe( development( sourcemaps.init() ) )
 		.pipe( sass().on( 'error', sass.logError ) )
 		.pipe( development( sourcemaps.write( { includeContent: false } ) ) )
@@ -45,7 +45,7 @@ gulp.task( 'style', function() {
 
 // Script.
 gulp.task( 'script', function() {
-	return gulp.src( [ rootPath + 'src/scripts/*.js' ] )
+	return gulp.src( [ rootPath + 'resources/scripts/*.js' ] )
 		.pipe( development( sourcemaps.init() ) )
 		.pipe( babel( {
 			presets: [ '@babel/env' ],
@@ -62,10 +62,10 @@ gulp.task( 'watch', function() {
 	} );
 
 	// Watch SCSS files.
-	gulp.watch( rootPath + 'src/sass/**/*.scss', gulp.series( 'style' ) ).on( 'change', browserSync.reload );
+	gulp.watch( rootPath + 'resources/sass/**/*.scss', gulp.series( 'style' ) ).on( 'change', browserSync.reload );
 
 	// Watch JS files.
-	gulp.watch( rootPath + 'src/scripts/**/*.js', gulp.series( 'script' ) ).on( 'change', browserSync.reload );
+	gulp.watch( rootPath + 'resources/scripts/**/*.js', gulp.series( 'script' ) ).on( 'change', browserSync.reload );
 
 	// Watch PHP files.
 	gulp.watch( rootPath + '**/**/*.php' ).on( 'change', browserSync.reload );
