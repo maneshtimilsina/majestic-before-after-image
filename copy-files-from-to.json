@@ -11,6 +11,7 @@
         "!*.yaml",
         "!*.js",
         "!src/**/*",
+        "!resources/**/*",
         "!sass/**/*",
         "!scripts/**/*",
         "!node_modules/**/*",
