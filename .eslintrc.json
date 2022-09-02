@@ -9,6 +9,7 @@
   },
   "globals": {
     "wp": true,
+    "ajaxurl": true,
     "mbaiAdmin": true,
     "elementorModules": true,
     "elementorFrontend": true,
