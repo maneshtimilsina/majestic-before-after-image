@@ -26,6 +26,9 @@ final class MBAI {
 
 		// Admin notice.
 		add_action( 'admin_init', array( $this, 'nifty_cs_admin_notice' ) );
+
+		// Update action links in plugins page.
+		add_filter( 'plugin_action_links_' . MBAI_BASE_FILENAME, array( $this, 'customize_plugin_action_links' ) );
 	}
 
 	/**
@@ -74,6 +77,32 @@ final class MBAI {
 		);
 
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+
+	/**
+	 * Customize plugin action links.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $actions Action links.
+	 * @return array Modified action links.
+	 */
+	public function customize_plugin_action_links( $actions ) {
+		$url = add_query_arg(
+			array(
+				'page' => 'majestic-before-after-image',
+			),
+			admin_url( 'admin.php' )
+		);
+
+		$actions = array_merge(
+			array(
+				'welcome' => '<a href="' . esc_url( $url ) . '">' . esc_html__( 'Welcome', 'majestic-before-after-image' ) . '</a>',
+			),
+			$actions
+		);
+
+		return $actions;
 	}
 
 	/**
