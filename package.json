@@ -15,6 +15,7 @@
     "pot": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
     "textdomain": "wpi18n addtextdomain --exclude=vendor,deploy,node_modules",
     "format": "prettier --write \"src/**/*.scss\"",
+		"prewpdeploy": "pnpm run deploy",
 		"wpdeploy": "wp-deployer",
     "version": "easy-replace-in-files"
   },
