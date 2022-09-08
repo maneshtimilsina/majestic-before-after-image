@@ -6,7 +6,7 @@ Tags: before, after, image, comparison
 Tested up to: 6.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 5.6
 Requires at least: 4.9
 
@@ -59,8 +59,11 @@ Yes, this is an addon of the Elementor page builder. so it needs Elementor to be
 Yes, it works with all themes.
 
 == Screenshots ==
-1. Widget Settings
-2. Widget Preview
+1. Widget Preview - Horizontal
+2. Widget Preview - Vertical
+3. Widget Settings - General
+4. Widget Settings - Handle
+5. Widget Settings - Style
 
 == Changelog ==
 
