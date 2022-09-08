@@ -87,7 +87,7 @@ class MBAI_Admin_Page {
 	private function get_plugins_list() {
 		$transient_key = 'wpc_mbai_plugins_list';
 
-		$transient_period = 21 * DAY_IN_SECONDS;
+		$transient_period = 7 * DAY_IN_SECONDS;
 
 		$output = get_transient( $transient_key );
 
