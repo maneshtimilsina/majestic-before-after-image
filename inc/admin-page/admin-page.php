@@ -20,8 +20,8 @@ class MBAI_Admin_Page {
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'add_admin_page' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_assets' ) );
-		add_action( 'wp_ajax_nopriv_wpc_get_plugins_list', array( $this, 'get_list_ajax_callback' ) );
-		add_action( 'wp_ajax_wpc_get_plugins_list', array( $this, 'get_list_ajax_callback' ) );
+		add_action( 'wp_ajax_nopriv_wpc_mbai_get_plugins_list', array( $this, 'get_list_ajax_callback' ) );
+		add_action( 'wp_ajax_wpc_mbai_get_plugins_list', array( $this, 'get_list_ajax_callback' ) );
 	}
 
 	/**
@@ -85,7 +85,7 @@ class MBAI_Admin_Page {
 	 * @return array Plugins list array.
 	 */
 	private function get_plugins_list() {
-		$transient_key = 'wpc_plugins_list';
+		$transient_key = 'wpc_mbai_plugins_list';
 
 		$transient_period = 21 * DAY_IN_SECONDS;
 
@@ -133,9 +133,10 @@ class MBAI_Admin_Page {
 			</div>
 
 			<p>
-				<a href="https://wordpress.org/support/plugin/majestic-before-after-image/#new-post" class="button button-primary" target="_blank"><?php echo esc_html__( 'Get Support', 'majestic-before-after-image' ); ?></a>
+				<a href="https://wpconcern.com/plugins/majestic-before-after-image/" class="button button-primary" target="_blank"><?php echo esc_html__( 'View Details', 'majestic-before-after-image' ); ?></a>
+				<a href="https://wpconcern.net/demo/majestic-before-after-image/" class="button button-secondary" target="_blank"><?php echo esc_html__( 'View Demo', 'majestic-before-after-image' ); ?></a>
+				<a href="https://wordpress.org/support/plugin/majestic-before-after-image/#new-post" class="button button-secondary" target="_blank"><?php echo esc_html__( 'Get Support', 'majestic-before-after-image' ); ?></a>
 				<a href="https://wordpress.org/support/plugin/majestic-before-after-image/reviews/#new-post" class="button" target="_blank"><?php echo esc_html__( 'Leave a Review', 'majestic-before-after-image' ); ?></a>
-				<a href="https://wpconcern.com/documentation/majestic-before-after-image/" class="button" target="_blank"><?php echo esc_html__( 'Documentation', 'majestic-before-after-image' ); ?></a>
 			</p>
 
 			<div class="wpc-main-content">
@@ -190,7 +191,6 @@ class MBAI_Admin_Page {
 
 						</div><!-- .wpc-tab-content -->
 
-
 					</div><!-- .wpc-tab-contents -->
 
 				</div><!-- .wpc-content-left -->
@@ -208,7 +208,7 @@ class MBAI_Admin_Page {
 
 			</div><!-- .wpc-main-content -->
 
-		</div>
+		</div><!-- .wrap -->
 		<?php
 	}
 }
