@@ -23,7 +23,7 @@
     "repoType": "plugin",
     "username": "wpconcern",
     "buildDir": "deploy/majestic-before-after-image",
-		"deployAssets": true
+		"deployAssets": false
   },
   "browserslist": "> 1%, not dead",
   "prettier": "@wordpress/prettier-config",
