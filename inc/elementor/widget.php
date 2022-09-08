@@ -591,6 +591,10 @@ class MBAI_Elementor_Widget extends Widget_Base {
 					'{{WRAPPER}} .twentytwenty-horizontal .twentytwenty-handle:after' => 'background: {{VALUE}};',
 					'{{WRAPPER}} .twentytwenty-vertical .twentytwenty-handle:before' => 'background: {{VALUE}};',
 					'{{WRAPPER}} .twentytwenty-vertical .twentytwenty-handle:after' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .twentytwenty-handle .twentytwenty-left-arrow' => 'border-right-color: {{VALUE}};',
+					'{{WRAPPER}} .twentytwenty-handle .twentytwenty-right-arrow' => 'border-left-color: {{VALUE}};',
+					'{{WRAPPER}} .twentytwenty-handle .twentytwenty-down-arrow' => 'border-top-color: {{VALUE}};',
+					'{{WRAPPER}} .twentytwenty-handle .twentytwenty-up-arrow' => 'border-bottom-color: {{VALUE}};',
 				),
 			)
 		);

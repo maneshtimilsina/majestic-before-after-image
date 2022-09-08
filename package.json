@@ -1,6 +1,6 @@
 {
   "name": "majestic-before-after-image",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main_file": "majestic-before-after-image.php",
   "scripts": {
@@ -8,20 +8,22 @@
     "build": "gulp build",
     "prod": "gulp build --env production",
     "preinstall": "npx only-allow pnpm",
-    "predeploy": "shx rm -rf vendor/ && composer install --no-dev --no-scripts -o && shx rm -rf assets/ && pnpm run prod",
-    "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copy-files-from-to && cd deploy/ && cross-var shx mv temp $npm_package_name && cross-var bestzip ../$npm_package_name.zip * && cd .. && cross-var shx mv $npm_package_name.zip deploy/",
     "eslint": "eslint --quiet .",
     "eslint:fix": "eslint --quiet --fix .",
+    "format": "prettier --write \"src/**/*.scss\"",
     "pot": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
     "textdomain": "wpi18n addtextdomain --exclude=vendor,deploy,node_modules",
-    "format": "prettier --write \"src/**/*.scss\"",
+    "version": "easy-replace-in-files",
 		"prewpdeploy": "pnpm run deploy",
 		"wpdeploy": "wp-deployer",
-    "version": "easy-replace-in-files"
+    "predeploy": "shx rm -rf vendor/ && composer install --no-dev --no-scripts -o && shx rm -rf assets/ && pnpm run prod",
+    "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copy-files-from-to && cd deploy/ && cross-var shx mv temp $npm_package_name && cross-var bestzip ../$npm_package_name.zip * && cd .. && cross-var shx mv $npm_package_name.zip deploy/"
   },
   "wpDeployer": {
+    "repoType": "plugin",
     "username": "wpconcern",
-    "buildDir": "deploy/majestic-before-after-image"
+    "buildDir": "deploy/majestic-before-after-image",
+		"deployAssets": true
   },
   "browserslist": "> 1%, not dead",
   "prettier": "@wordpress/prettier-config",
