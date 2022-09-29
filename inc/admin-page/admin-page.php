@@ -5,6 +5,8 @@
  * @package MBAI
  */
 
+use Nilambar\Welcome\Welcome;
+
 /**
  * MBAI admin page class.
  *
@@ -18,7 +20,7 @@ class MBAI_Admin_Page {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		add_action( 'admin_menu', array( $this, 'add_admin_page' ) );
+		add_action( 'wp_welcome_init', array( $this, 'add_admin_page' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_assets' ) );
 		add_action( 'wp_ajax_nopriv_wpc_mbai_get_plugins_list', array( $this, 'get_list_ajax_callback' ) );
 		add_action( 'wp_ajax_wpc_mbai_get_plugins_list', array( $this, 'get_list_ajax_callback' ) );
@@ -30,7 +32,148 @@ class MBAI_Admin_Page {
 	 * @since 1.0.0
 	 */
 	public function add_admin_page() {
-		add_menu_page( esc_html__( 'Majestic Before After Image', 'majestic-before-after-image' ), esc_html__( 'Majestic Before After Image', 'majestic-before-after-image' ), 'manage_options', 'majestic-before-after-image', array( $this, 'render_admin_page' ), 'dashicons-image-flip-horizontal' );
+		$obj = new Welcome( 'plugin', 'majestic-before-after-image' );
+
+		$obj->set_page(
+			array(
+				'page_title'     => esc_html__( 'Majestic Before After Image', 'majestic-before-after-image' ),
+				'page_subtitle'  => sprintf( esc_html__( 'Version: %s', 'majestic-before-after-image' ), MBAI_VERSION ),
+				'menu_title'     => esc_html__( 'Majestic Before After Image', 'majestic-before-after-image' ),
+				'menu_slug'      => 'majestic-before-after-image',
+				'capability'     => 'manage_options',
+				'menu_icon'      => 'dashicons-image-flip-horizontal',
+				'top_level_menu' => true,
+			)
+		);
+
+		$obj->set_quick_links(
+			array(
+				array(
+					'text' => 'View Details',
+					'url'  => 'https://wpconcern.com/plugins/majestic-before-after-image/',
+					'type' => 'primary',
+				),
+				array(
+					'text' => 'View Demo',
+					'url'  => 'https://wpconcern.net/demo/majestic-before-after-image/',
+					'type' => 'secondary',
+				),
+				array(
+					'text' => 'Get Support',
+					'url'  => 'https://wordpress.org/support/plugin/majestic-before-after-image/#new-post',
+					'type' => 'secondary',
+				),
+			)
+		);
+
+		$obj->set_admin_notice(
+			array(
+				'screens' => array( 'dashboard' ),
+			)
+		);
+
+		$obj->add_tab(
+			array(
+				'id'    => 'welcome',
+				'title' => 'Welcome',
+				'type'  => 'grid',
+				'items' => array(
+					array(
+						'title'       => 'Elementor Widget',
+						'icon'        => 'dashicons dashicons-image-flip-horizontal',
+						'description' => "Edit page with Elementor, drag and drop the 'Majestic Before After Image' element to the section you want. And start customizing the widget.",
+					),
+					array(
+						'title'       => 'View Demo',
+						'icon'        => 'dashicons dashicons-desktop',
+						'description' => 'You can check out the plugin demo for reference to find out what you can achieve using the plugin and how it can be customized.',
+						'button_text' => 'Visit Demo',
+						'button_url'  => 'https://wpconcern.net/demo/majestic-before-after-image/',
+						'button_type' => 'secondary',
+						'is_new_tab'  => true,
+					),
+					array(
+						'title'       => 'Get Support',
+						'icon'        => 'dashicons dashicons-editor-help',
+						'description' => 'Got theme support question or found bug or got some feedbacks? Please visit support forum in the WordPress.org directory.',
+						'button_text' => 'Visit Support',
+						'button_url'  => 'https://wordpress.org/support/plugin/majestic-before-after-image/#new-post',
+						'button_type' => 'secondary',
+						'is_new_tab'  => true,
+					),
+					array(
+						'title'       => 'Documentation',
+						'icon'        => 'dashicons dashicons-admin-page',
+						'description' => 'Please check the plugin documentation for detailed information on how to setup and customize it.',
+						'button_text' => 'View Documentation',
+						'button_url'  => 'https://wpconcern.com/documentation/majestic-before-after-image/',
+						'button_type' => 'secondary',
+						'is_new_tab'  => true,
+					),
+				),
+			)
+		);
+
+		$obj->add_tab(
+			array(
+				'id'              => 'features',
+				'title'           => 'Features',
+				'type'            => 'custom',
+				'render_callback' => array( $this, 'render_features_list' ),
+
+			)
+		);
+
+		$obj->set_sidebar(
+			array(
+				'render_callback' => array( $this, 'render_welcome_page_sidebar' ),
+			)
+		);
+
+		$obj->run();
+	}
+
+	public function render_features_list() {
+		echo '<ul>
+				<li>Horizontal / Vertical Orientation</li>
+				<li>Handle movement control - Swipe or Hover</li>
+				<li>Customizable before and after labels</li>
+				<li>Labels visibility - On Hover, Always or Never</li>
+				<li>Enable / disable overlay</li>
+				<li>Default handle offset position</li>
+				<li>Multiple handle styles</li>
+				<li>Handle types - Arrows or Text</li>
+				<li>Image size option</li>
+				<li>Typography and color options</li>
+			</ul>';
+	}
+
+	/**
+	 * Render welcome page sidebar.
+	 *
+	 * @since 1.0.2
+	 *
+	 * @param Welcome $object Instance of Welcome class.
+	 */
+	public function render_welcome_page_sidebar( $object ) {
+		$object->render_sidebar_box(
+			array(
+				'title'        => 'Leave a Review',
+				'content'      => $object->get_stars() . sprintf( 'Are you enjoying %1$s? We would appreciate a review.', $object->get_name() ),
+				'button_text'  => 'Submit Review',
+				'button_url'   => 'https://wordpress.org/support/plugin/majestic-before-after-image/reviews/#new-post',
+				'button_class' => 'button',
+			),
+			$object
+		);
+
+		$object->render_sidebar_box(
+			array(
+				'title'   => 'Our Plugins',
+				'content' => '<div class="wpc-plugins-list"></div>',
+			),
+			$object
+		);
 	}
 
 	/**
@@ -45,15 +188,7 @@ class MBAI_Admin_Page {
 			return;
 		}
 
-		wp_enqueue_style( 'mbai-admin-page', MBAI_URL . '/assets/css/admin-page.css', array(), MBAI_VERSION );
 		wp_enqueue_script( 'mbai-plugins-list', MBAI_URL . '/assets/js/plugins-list.js', array( 'jquery' ), MBAI_VERSION, true );
-		wp_enqueue_script( 'mbai-admin-page', MBAI_URL . '/assets/js/admin-page.js', array( 'jquery', 'mbai-plugins-list' ), MBAI_VERSION, true );
-
-		$localized_array = array(
-			'storage_key' => 'mbai-activetab',
-		);
-
-		wp_localize_script( 'mbai-admin-page', 'mbaiAdmin', $localized_array );
 	}
 
 	/**
