@@ -2,10 +2,10 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Majestic Before After Image 1.0.0\n"
+"Project-Id-Version: Majestic Before After Image 1.0.1\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/majestic-before-after-image\n"
-"POT-Creation-Date: 2022-09-02 06:33:46+00:00\n"
+"POT-Creation-Date: 2022-09-29 10:48:37+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,21 +18,25 @@ msgstr ""
 msgid "Majestic Before After Image"
 msgstr ""
 
-#: inc/admin-page/admin-page.php:132
+#: inc/admin-page/admin-page.php:40 inc/admin-page/admin-page.php:267
 #. translators: %s: version.
 msgid "Version: %s"
 msgstr ""
 
-#: inc/admin-page/admin-page.php:136
+#: inc/admin-page/admin-page.php:271
+msgid "View Details"
+msgstr ""
+
+#: inc/admin-page/admin-page.php:272
+msgid "View Demo"
+msgstr ""
+
+#: inc/admin-page/admin-page.php:273
 msgid "Get Support"
 msgstr ""
 
-#: inc/admin-page/admin-page.php:137
+#: inc/admin-page/admin-page.php:274
 msgid "Leave a Review"
-msgstr ""
-
-#: inc/admin-page/admin-page.php:138
-msgid "Documentation"
 msgstr ""
 
 #: inc/elementor/elementor.php:60
