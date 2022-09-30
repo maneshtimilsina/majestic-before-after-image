@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "257d6e2e9e28e1d4d519dfc3153384a8",
+    "content-hash": "81dac3eefde0bdfadf1661eb12541b7e",
     "packages": [
         {
             "name": "ernilambar/wp-admin-notice",
@@ -59,12 +59,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ernilambar/wp-welcome.git",
-                "reference": "d8828cc0e52e887ffcf76509233e965f7623c55f"
+                "reference": "1f80ec69bfe76622e172798281bb06a76fcb2c0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ernilambar/wp-welcome/zipball/d8828cc0e52e887ffcf76509233e965f7623c55f",
-                "reference": "d8828cc0e52e887ffcf76509233e965f7623c55f",
+                "url": "https://api.github.com/repos/ernilambar/wp-welcome/zipball/1f80ec69bfe76622e172798281bb06a76fcb2c0c",
+                "reference": "1f80ec69bfe76622e172798281bb06a76fcb2c0c",
                 "shasum": ""
             },
             "require": {
@@ -94,7 +94,7 @@
                 "issues": "https://github.com/ernilambar/wp-welcome/issues",
                 "source": "https://github.com/ernilambar/wp-welcome/tree/1.0.1"
             },
-            "time": "2022-09-29T10:59:23+00:00"
+            "time": "2022-09-30T10:16:27+00:00"
         }
     ],
     "packages-dev": [
@@ -458,7 +458,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=5.6"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
 }
