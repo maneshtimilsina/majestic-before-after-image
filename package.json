@@ -1,6 +1,6 @@
 {
   "name": "majestic-before-after-image",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main_file": "majestic-before-after-image.php",
   "scripts": {
@@ -14,8 +14,8 @@
     "pot": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
     "textdomain": "wpi18n addtextdomain --exclude=vendor,deploy,node_modules",
     "version": "easy-replace-in-files",
-		"prewpdeploy": "pnpm run deploy",
-		"wpdeploy": "wp-deployer",
+    "prewpdeploy": "pnpm run deploy",
+    "wpdeploy": "wp-deployer",
     "predeploy": "shx rm -rf vendor/ && composer install --no-dev --no-scripts -o && shx rm -rf assets/ && pnpm run prod",
     "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copy-files-from-to && cd deploy/ && cross-var shx mv temp $npm_package_name && cross-var bestzip ../$npm_package_name.zip * && cd .. && cross-var shx mv $npm_package_name.zip deploy/"
   },
@@ -23,7 +23,7 @@
     "repoType": "plugin",
     "username": "wpconcern",
     "buildDir": "deploy/majestic-before-after-image",
-		"deployAssets": false
+    "deployAssets": false
   },
   "browserslist": "> 1%, not dead",
   "prettier": "@wordpress/prettier-config",
@@ -31,17 +31,17 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.18.6",
-    "@babel/preset-env": "^7.18.6",
-    "@wordpress/eslint-plugin": "^12.8.0",
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "@wordpress/eslint-plugin": "^12.9.0",
     "@wordpress/prettier-config": "^1.4.0",
     "bestzip": "^2.2.1",
     "browser-sync": "^2.27.10",
     "copy-files-from-to": "^3.2.2",
     "cross-var": "^1.1.0",
-    "dotenv": "^16.0.1",
-    "easy-replace-in-files": "^1.0.2",
-    "eslint": "^8.21.0",
+    "dotenv": "^16.0.3",
+    "easy-replace-in-files": "^1.0.3",
+    "eslint": "^8.27.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
@@ -49,9 +49,9 @@
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
-    "node-wp-i18n": "^1.2.6",
+    "node-wp-i18n": "^1.2.7",
     "prettier": "^2.7.1",
-    "sass": "^1.54.6",
+    "sass": "^1.56.1",
     "shx": "^0.3.4",
     "wp-deployer": "^1.0.3"
   }

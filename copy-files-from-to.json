@@ -7,7 +7,6 @@
         "!*.dist",
         "!*.json",
         "!*.lock",
-        "!*.lockb",
         "!*.yaml",
         "!*.js",
         "!build/**/*",
