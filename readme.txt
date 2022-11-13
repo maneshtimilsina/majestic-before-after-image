@@ -6,7 +6,7 @@ Tags: before, after, image, comparison, before after image comparison, before af
 Tested up to: 6.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 5.6
 Requires at least: 4.9
 
@@ -66,6 +66,9 @@ Yes, it works with all themes.
 5. Widget Settings - Style
 
 == Changelog ==
+
+= 1.0.3 - 13 Sep 2022 =
+* Fix PHP issue
 
 = 1.0.2 - 30 Sep 2022 =
 * Update dashboard
