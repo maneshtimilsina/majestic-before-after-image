@@ -1,15 +1,6 @@
 {
   "license": "MIT",
 	"minimum-stability": "stable",
-  "repositories1": [
-    {
-      "type": "path",
-      "url": "/Users/nilambarsharma/Work/wp-git/wp-welcome",
-      "options": {
-        "symlink": true
-      }
-    }
-  ],
   "scripts": {
     "pc:info": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs -i",
     "pc:config": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --config-show",
@@ -31,6 +22,6 @@
   "require": {
 		"php": ">=5.6",
     "ernilambar/wp-admin-notice": "^1.0",
-    "ernilambar/wp-welcome": "*"
+    "ernilambar/wp-welcome": "^1.0"
   }
 }
