@@ -3,10 +3,10 @@
 Contributors: wpconcern, maneshtimilsina, rabmalin
 Donate link: https://wpconcern.com/plugins/majestic-before-after-image/
 Tags: before, after, image, comparison, before after image comparison, before after, image comparison, before after image slider, elementor before after image, before and after image, image comparison for elementor, before after image for elementor
-Tested up to: 6.1
+Tested up to: 6.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Requires PHP: 5.6
 Requires at least: 4.9
 
@@ -66,6 +66,9 @@ Yes, it works with all themes.
 5. Widget Settings - Style
 
 == Changelog ==
+
+= 1.0.4 - 19 Feb 2023 =
+* Fix PHP 8 issue
 
 = 1.0.3 - 13 Sep 2022 =
 * Fix PHP issue
