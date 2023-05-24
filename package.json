@@ -1,6 +1,6 @@
 {
   "name": "majestic-before-after-image",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main_file": "majestic-before-after-image.php",
   "scripts": {
@@ -17,7 +17,7 @@
     "prewpdeploy": "pnpm run deploy",
     "wpdeploy": "wp-deployer",
     "predeploy": "shx rm -rf vendor/ && composer install --no-dev --no-scripts -o && shx rm -rf assets/ && pnpm run prod",
-    "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copy-files-from-to && cd deploy/ && cross-var shx mv temp $npm_package_name && cross-var bestzip ../$npm_package_name.zip * && cd .. && cross-var shx mv $npm_package_name.zip deploy/"
+    "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copy-files-from-to --silent && cd deploy/ && cross-var shx mv temp $npm_package_name && cross-var bestzip ../$npm_package_name.zip * && cd .. && cross-var shx mv $npm_package_name.zip deploy/"
   },
   "wpDeployer": {
     "repoType": "plugin",
@@ -27,21 +27,21 @@
   },
   "browserslist": "> 1%, not dead",
   "prettier": "@wordpress/prettier-config",
-  "keywords": [],
+  "keywords": ["wordpress"],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2",
-    "@wordpress/eslint-plugin": "^14.0.0",
-    "@wordpress/prettier-config": "^2.10.0",
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@wordpress/eslint-plugin": "^14.6.0",
+    "@wordpress/prettier-config": "^2.16.0",
     "bestzip": "^2.2.1",
-    "browser-sync": "^2.27.11",
-    "copy-files-from-to": "^3.8.0",
+    "browser-sync": "^2.29.3",
+    "copy-files-from-to": "^3.9.0",
     "cross-var": "^1.1.0",
     "dotenv": "^16.0.3",
     "easy-replace-in-files": "^1.0.3",
-    "eslint": "^8.34.0",
+    "eslint": "^8.41.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
@@ -50,8 +50,8 @@
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "node-wp-i18n": "^1.2.7",
-    "prettier": "^2.8.4",
-    "sass": "^1.58.3",
+    "prettier": "^2.8.8",
+    "sass": "^1.62.1",
     "shx": "^0.3.4",
     "wp-deployer": "^1.0.3"
   }
