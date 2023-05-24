@@ -1,6 +1,7 @@
 {
+	"name": "wpconcern/majestic-before-after-image",
+	"description": "Majestic Before After Image",
   "license": "MIT",
-	"minimum-stability": "stable",
   "scripts": {
     "pc:info": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs -i",
     "pc:config": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --config-show",
@@ -10,9 +11,9 @@
 		"compat": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --standard=.phpcompat.xml.dist --report-full --report-summary ."
   },
   "require-dev": {
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
     "phpcompatibility/phpcompatibility-wp": "^2.1",
-    "wp-coding-standards/wpcs": "^2.3"
+    "wp-coding-standards/wpcs": "dev-develop"
   },
   "config": {
     "allow-plugins": {

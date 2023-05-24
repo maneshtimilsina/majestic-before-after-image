@@ -6,9 +6,9 @@ Tags: before, after, image, comparison, before after image comparison, before af
 Tested up to: 6.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0.4
-Requires PHP: 5.6
-Requires at least: 4.9
+Stable tag: 1.0.5
+Requires PHP: 7.0
+Requires at least: 5.9
 
 Majestic Before After Image is an Elementor addon to show the comparison of two images with a draggable handle. Compare two images by placing them side-by-side.
 
@@ -66,6 +66,9 @@ Yes, it works with all themes.
 5. Widget Settings - Style
 
 == Changelog ==
+
+= 1.0.5 - 25 May 2023 =
+* Update Admin Notice package
 
 = 1.0.4 - 19 Feb 2023 =
 * Fix PHP 8 issue

@@ -159,26 +159,26 @@ class MBAI_Admin_Page {
 	 *
 	 * @since 1.0.2
 	 *
-	 * @param Welcome $object Instance of Welcome class.
+	 * @param Welcome $welcome_object Instance of Welcome class.
 	 */
-	public function render_welcome_page_sidebar( $object ) {
-		$object->render_sidebar_box(
+	public function render_welcome_page_sidebar( $welcome_object ) {
+		$welcome_object->render_sidebar_box(
 			array(
 				'title'        => 'Leave a Review',
-				'content'      => $object->get_stars() . sprintf( 'Are you enjoying %1$s? We would appreciate a review.', $object->get_name() ),
+				'content'      => $welcome_object->get_stars() . sprintf( 'Are you enjoying %1$s? We would appreciate a review.', $welcome_object->get_name() ),
 				'button_text'  => 'Submit Review',
 				'button_url'   => 'https://wordpress.org/support/plugin/majestic-before-after-image/reviews/#new-post',
 				'button_class' => 'button',
 			),
-			$object
+			$welcome_object
 		);
 
-		$object->render_sidebar_box(
+		$welcome_object->render_sidebar_box(
 			array(
 				'title'   => 'Our Plugins',
 				'content' => '<div class="wpc-plugins-list"></div>',
 			),
-			$object
+			$welcome_object
 		);
 	}
 
