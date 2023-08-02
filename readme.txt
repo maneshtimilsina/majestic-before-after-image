@@ -6,7 +6,7 @@ Tags: before, after, image, comparison, before after image comparison, before af
 Tested up to: 6.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0.6
+Stable tag: 1.0.8
 Requires PHP: 7.0
 Requires at least: 5.9
 
