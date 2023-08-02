@@ -1,12 +1,12 @@
 === Majestic Before After Image ===
 
-Contributors: wpconcern, maneshtimilsina, rabmalin
-Donate link: https://wpconcern.com/plugins/majestic-before-after-image/
+Contributors: maneshtimilsina, rabmalin
+Donate link: https://www.buymeacoffee.com/maneshtimilsina
 Tags: before, after, image, comparison, before after image comparison, before after, image comparison, before after image slider, elementor before after image, before and after image, image comparison for elementor, before after image for elementor
 Tested up to: 6.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 Requires PHP: 7.0
 Requires at least: 5.9
 
@@ -18,7 +18,7 @@ Majestic Before After Image is an Elementor addon to show the comparison of two 
 
 Visitors can drag the position of the handle to compare the images. Additionally, it supports handle movement on mouse hover. Furthermore, you can enable the text mode and add custom text like Drag, Vs, Swipe, etc, to make it more meaningful to your visitor.
 
-[View Demo](https://wpconcern.net/demo/majestic-before-after-image/) | [View Details](https://wpconcern.com/plugins/majestic-before-after-image/) | [Support](https://wordpress.org/support/plugin/majestic-before-after-image/)
+[View Demo](https://mbai.wpmanesh.com/) | [View Details](https://maneshtimilsina.com/plugins/majestic-before-after-image/) | [Support](https://wordpress.org/support/plugin/majestic-before-after-image/)
 
 ### Key Features
 
@@ -66,6 +66,9 @@ Yes, it works with all themes.
 5. Widget Settings - Style
 
 == Changelog ==
+
+= 1.0.6 - 02 August 2023 =
+* Update author info and links
 
 = 1.0.5 - 25 May 2023 =
 * Update Admin Notice package

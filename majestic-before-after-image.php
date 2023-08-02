@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Majestic Before After Image
- * Plugin URI: https://wpconcern.com/plugins/majestic-before-after-image/
+ * Plugin URI: https://maneshtimilsina.com/plugins/majestic-before-after-image/
  * Description: Majestic Before After Image is an Elementor addon to show the comparison of two images with a draggable handle.
- * Version: 1.0.5
- * Author: WP Concern
- * Author URI: https://wpconcern.com/
+ * Version: 1.0.6
+ * Author: Manesh Timilsina
+ * Author URI: https://maneshtimilsina.com/
  * Text Domain: majestic-before-after-image
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -15,7 +15,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'MBAI_VERSION', '1.0.5' );
+define( 'MBAI_VERSION', '1.0.6' );
 define( 'MBAI_SLUG', 'majestic-before-after-image' );
 define( 'MBAI_BASE_NAME', basename( __DIR__ ) );
 define( 'MBAI_BASE_FILEPATH', __FILE__ );
