@@ -6,7 +6,7 @@ Tags: before, after, image, comparison, before after image comparison, before af
 Tested up to: 6.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0.8
+Stable tag: 1.0.10
 Requires PHP: 7.0
 Requires at least: 5.9
 
@@ -67,7 +67,7 @@ Yes, it works with all themes.
 
 == Changelog ==
 
-= 1.0.6 - 02 August 2023 =
+= 1.0.10 - 02 August 2023 =
 * Update author info and links
 
 = 1.0.5 - 25 May 2023 =

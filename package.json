@@ -1,6 +1,6 @@
 {
   "name": "majestic-before-after-image",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "",
   "main_file": "majestic-before-after-image.php",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "wpDeployer": {
     "repoType": "plugin",
-    "username": "rabmalin",
+    "username": "maneshtimilsina",
     "buildDir": "deploy/majestic-before-after-image",
     "deployAssets": false
   },
