@@ -88,7 +88,6 @@ class MBAI_Elementor {
 
 		\Elementor\Plugin::instance()->widgets_manager->register( new MBAI_Elementor_Widget() );
 	}
-
 }
 
 MBAI_Elementor::instance();

@@ -39,8 +39,7 @@ class MBAI_Admin_Page {
 				'menu_title'     => esc_html__( 'Majestic Before After Image', 'majestic-before-after-image' ),
 				'menu_slug'      => 'majestic-before-after-image',
 				'capability'     => 'manage_options',
-				'menu_icon'      => 'dashicons-image-flip-horizontal',
-				'top_level_menu' => true,
+				'top_level_menu' => false,
 			)
 		);
 
@@ -112,16 +111,6 @@ class MBAI_Admin_Page {
 			)
 		);
 
-		$obj->add_tab(
-			array(
-				'id'              => 'features',
-				'title'           => 'Features',
-				'type'            => 'custom',
-				'render_callback' => array( $this, 'render_features_list' ),
-
-			)
-		);
-
 		$obj->set_sidebar(
 			array(
 				'render_callback' => array( $this, 'render_welcome_page_sidebar' ),
@@ -129,26 +118,6 @@ class MBAI_Admin_Page {
 		);
 
 		$obj->run();
-	}
-
-	/**
-	 * Render features.
-	 *
-	 * @since 1.0.2
-	 */
-	public function render_features_list() {
-		echo '<ul>
-				<li>Horizontal / Vertical Orientation</li>
-				<li>Handle movement control - Swipe or Hover</li>
-				<li>Customizable before and after labels</li>
-				<li>Labels visibility - On Hover, Always or Never</li>
-				<li>Enable / disable overlay</li>
-				<li>Default handle offset position</li>
-				<li>Multiple handle styles</li>
-				<li>Handle types - Arrows or Text</li>
-				<li>Image size option</li>
-				<li>Typography and color options</li>
-			</ul>';
 	}
 
 	/**
@@ -175,7 +144,7 @@ class MBAI_Admin_Page {
 				'title'        => 'Buy Me A Coffee',
 				'content'      => 'Would you like to support the advancement of this plugin?',
 				'button_text'  => 'Buy Me A Coffee',
-				'button_url'   => 'https://www.buymeacoffee.com/maneshtimilsina',
+				'button_url'   => 'https://ko-fi.com/maneshtimilsina',
 				'button_class' => 'button',
 			),
 			$welcome_object
