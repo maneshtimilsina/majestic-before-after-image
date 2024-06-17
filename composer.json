@@ -13,7 +13,7 @@
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
     "phpcompatibility/phpcompatibility-wp": "^2.1",
-    "wp-coding-standards/wpcs": "dev-develop"
+    "wp-coding-standards/wpcs": "3.1"
   },
   "config": {
     "allow-plugins": {
@@ -23,6 +23,6 @@
   "require": {
 		"php": ">=5.6",
     "ernilambar/wp-admin-notice": "^1.0",
-    "ernilambar/wp-welcome": "^1.0"
+		"ernilambar/wp-welcome": "^1.0"
   }
 }
