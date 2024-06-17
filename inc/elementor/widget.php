@@ -5,11 +5,11 @@
  * @package MBAI
  */
 
-use \Elementor\Widget_Base;
-use \Elementor\Controls_Manager;
-use \Elementor\Group_Control_Typography;
-use \Elementor\Group_Control_Image_Size;
-use \Elementor\Core\Kits\Documents\Tabs\Global_Typography;
+use Elementor\Widget_Base;
+use Elementor\Controls_Manager;
+use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Image_Size;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 
 /**
  * MBAI Elementor widget class.
