@@ -3,23 +3,49 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Majestic Before After Image 1.0.11\n"
-"Report-Msgid-Bugs-To: "
-"https://wordpress.org/support/plugin/majestic-before-after-image\n"
-"POT-Creation-Date: 2024-06-17 12:08:38+00:00\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/majestic-before-after-image\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: node-wp-i18n 1.2.7\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: majestic-before-after-image\n"
 
-#. Plugin Name of the plugin/theme
+#. Plugin Name of the plugin
+#: majestic-before-after-image.php
+#: inc/admin-page/admin-page.php:36
+#: inc/admin-page/admin-page.php:39
+#: inc/elementor/widget.php:60
+#: inc/mbai.php:75
+#: inc/mbai.php:117
 msgid "Majestic Before After Image"
 msgstr ""
 
-#: inc/admin-page/admin-page.php:38
+#. Plugin URI of the plugin
+#: majestic-before-after-image.php
+msgid "https://maneshtimilsina.com/plugins/majestic-before-after-image/"
+msgstr ""
+
+#. Description of the plugin
+#: majestic-before-after-image.php
+msgid "Majestic Before After Image is an Elementor addon to show the comparison of two images with a draggable handle."
+msgstr ""
+
+#. Author of the plugin
+#: majestic-before-after-image.php
+msgid "Manesh Timilsina"
+msgstr ""
+
+#. Author URI of the plugin
+#: majestic-before-after-image.php
+msgid "https://maneshtimilsina.com/"
+msgstr ""
+
 #. translators: %s: version.
+#: inc/admin-page/admin-page.php:38
 msgid "Version: %s"
 msgstr ""
 
@@ -43,11 +69,13 @@ msgstr ""
 msgid "Enable Overlay"
 msgstr ""
 
-#: inc/elementor/widget.php:180 inc/elementor/widget.php:376
+#: inc/elementor/widget.php:180
+#: inc/elementor/widget.php:376
 msgid "Yes"
 msgstr ""
 
-#: inc/elementor/widget.php:181 inc/elementor/widget.php:377
+#: inc/elementor/widget.php:181
+#: inc/elementor/widget.php:377
 msgid "No"
 msgstr ""
 
@@ -99,7 +127,8 @@ msgstr ""
 msgid "Vertical"
 msgstr ""
 
-#: inc/elementor/widget.php:272 inc/elementor/widget.php:576
+#: inc/elementor/widget.php:272
+#: inc/elementor/widget.php:576
 msgid "Handle"
 msgstr ""
 
@@ -115,7 +144,8 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: inc/elementor/widget.php:293 inc/elementor/widget.php:519
+#: inc/elementor/widget.php:293
+#: inc/elementor/widget.php:519
 msgid "Handle Text"
 msgstr ""
 
@@ -171,11 +201,13 @@ msgstr ""
 msgid "Labels"
 msgstr ""
 
-#: inc/elementor/widget.php:418 inc/elementor/widget.php:544
+#: inc/elementor/widget.php:418
+#: inc/elementor/widget.php:544
 msgid "Color"
 msgstr ""
 
-#: inc/elementor/widget.php:433 inc/elementor/widget.php:558
+#: inc/elementor/widget.php:433
+#: inc/elementor/widget.php:558
 msgid "Background Color"
 msgstr ""
 
@@ -199,8 +231,8 @@ msgstr ""
 msgid "Handle Color"
 msgstr ""
 
-#: inc/mbai.php:74
 #. translators: 1: Plugin name 2: Elementor
+#: inc/mbai.php:74
 msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
 msgstr ""
 
@@ -210,22 +242,4 @@ msgstr ""
 
 #: inc/mbai.php:100
 msgid "Welcome"
-msgstr ""
-
-#. Plugin URI of the plugin/theme
-msgid "https://maneshtimilsina.com/plugins/majestic-before-after-image/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"Majestic Before After Image is an Elementor addon to show the comparison of "
-"two images with a draggable handle."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Manesh Timilsina"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://maneshtimilsina.com/"
 msgstr ""
