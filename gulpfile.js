@@ -58,7 +58,8 @@ gulp.task( 'script', function() {
 gulp.task( 'watch', function() {
 	browserSync.init( {
 		proxy: process.env.DEV_SERVER_URL,
-		open: true,
+		open: 'yes' === process.env.BROWSERSYNC_OPEN ? true : false,
+
 	} );
 
 	// Watch SCSS files.

@@ -1,28 +1,28 @@
 {
 	"name": "maneshtimilsina/majestic-before-after-image",
 	"description": "Majestic Before After Image",
-  "license": "MIT",
-  "scripts": {
-    "pc:info": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs -i",
-    "pc:config": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --config-show",
-    "lint": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --report-full --report-summary .",
-		"lint:error": "@lint -n",
-    "lint:fix": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf --report-full --report-summary .",
-		"compat": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --standard=.phpcompat.xml.dist --report-full --report-summary ."
-  },
-  "require-dev": {
-    "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-    "phpcompatibility/phpcompatibility-wp": "^2.1",
-    "wp-coding-standards/wpcs": "3.1"
-  },
-  "config": {
-    "allow-plugins": {
-      "dealerdirect/phpcodesniffer-composer-installer": true
-    }
-  },
-  "require": {
-		"php": ">=5.6",
-    "ernilambar/wp-admin-notice": "^1.0",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": ">=7.4",
+		"ernilambar/wp-admin-notice": "^1.0",
 		"ernilambar/wp-welcome": "^1.0"
-  }
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"wp-coding-standards/wpcs": "3.1"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"ergebnis/composer-normalize": true
+		},
+		"optimize-autoloader": true,
+		"sort-packages": true
+	},
+	"scripts": {
+		"compat": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --standard=.phpcompat.xml.dist --report-full --report-summary .",
+		"lint": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --report-full --report-summary .",
+		"lint:fix": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf --report-full --report-summary ."
+	}
 }

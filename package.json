@@ -1,58 +1,82 @@
 {
-  "name": "majestic-before-after-image",
-  "version": "1.0.11",
-  "description": "",
-  "main_file": "majestic-before-after-image.php",
-  "scripts": {
-    "dev": "pnpm run build && gulp",
-    "build": "gulp build",
-    "prod": "gulp build --env production",
-    "preinstall": "npx only-allow pnpm",
-    "eslint": "eslint --quiet .",
-    "eslint:fix": "eslint --quiet --fix .",
-    "format": "prettier --write \"resources/**/*.scss\"",
-    "pot": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
-    "textdomain": "wpi18n addtextdomain --exclude=vendor,deploy,node_modules",
-    "version": "easy-replace-in-files",
-    "prewpdeploy": "pnpm run deploy",
-    "wpdeploy": "wp-deployer",
-    "predeploy": "shx rm -rf vendor/ && composer install --no-dev --no-scripts -o && shx rm -rf assets/ && pnpm run prod",
-    "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copy-files-from-to --silent && cd deploy/ && cross-var shx mv temp $npm_package_name && cross-var bestzip ../$npm_package_name.zip * && cd .. && cross-var shx mv $npm_package_name.zip deploy/"
-  },
-  "wpDeployer": {
-    "repoType": "plugin",
-    "username": "maneshtimilsina",
-    "buildDir": "deploy/majestic-before-after-image",
-    "deployAssets": false
-  },
-  "browserslist": "> 1%, not dead",
-  "prettier": "@wordpress/prettier-config",
-  "keywords": ["wordpress"],
-  "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "@babel/core": "^7.21.8",
-    "@babel/preset-env": "^7.21.5",
-    "@wordpress/eslint-plugin": "^14.6.0",
-    "@wordpress/prettier-config": "^2.16.0",
-    "bestzip": "^2.2.1",
-    "browser-sync": "^2.29.3",
-    "copy-files-from-to": "^3.9.0",
-    "cross-var": "^1.1.0",
-    "dotenv": "^16.0.3",
-    "easy-replace-in-files": "^1.0.3",
-    "eslint": "^8.41.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-babel": "^8.0.0",
-    "gulp-environments": "^1.0.1",
-    "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "node-wp-i18n": "^1.2.7",
-    "prettier": "^2.8.8",
-    "sass": "^1.62.1",
-    "shx": "^0.3.4",
-    "wp-deployer": "^1.0.3"
-  }
+	"name": "majestic-before-after-image",
+	"version": "1.0.11",
+	"description": "Majestic Before After Image",
+	"main_file": "majestic-before-after-image.php",
+	"author": "Manesh Timilsina",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"wordpress",
+		"wordpress-plugin"
+	],
+	"homepage": "https://github.com/maneshtimilsina/majestic-before-after-image",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/maneshtimilsina/majestic-before-after-image.git"
+	},
+	"bugs": {
+		"url": "https://github.com/maneshtimilsina/majestic-before-after-image/issues"
+	},
+	"browserslist": "> 1%, not dead",
+	"packtor": {
+		"files": [
+			"**/*",
+			"!*.js",
+			"!*.json",
+			"!*.lock",
+			"!*.yaml",
+			"!resources/**/*"
+		]
+	},
+	"wpDeployer": {
+		"repoType": "plugin",
+		"username": "maneshtimilsina",
+		"buildDir": "deploy/majestic-before-after-image",
+		"deployAssets": false
+	},
+	"npmpackagejsonlint": {
+		"extends": "@wordpress/npm-package-json-lint-config"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.24.7",
+		"@babel/preset-env": "^7.24.7",
+		"@wordpress/eslint-plugin": "^14.6.0",
+		"@wordpress/npm-package-json-lint-config": "^5.1.0",
+		"@wordpress/prettier-config": "^2.16.0",
+		"browser-sync": "^3.0.2",
+		"dotenv": "^16.4.5",
+		"easy-replace-in-files": "^1.0.3",
+		"eslint": "^8.41.0",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-babel": "^8.0.0",
+		"gulp-environments": "^1.0.1",
+		"gulp-plumber": "^1.2.1",
+		"gulp-sass": "^5.1.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"node-wp-i18n": "^1.2.7",
+		"npm-package-json-lint": "^8.0.0",
+		"packtor": "^1.0.2",
+		"prettier": "npm:wp-prettier@^3.0.3",
+		"sass": "^1.77.6",
+		"shx": "^0.3.4",
+		"wp-deployer": "^1.0.3"
+	},
+	"scripts": {
+		"dev": "pnpm run build && gulp",
+		"build": "gulp build",
+		"prod": "gulp build --env production",
+		"eslint": "eslint --quiet .",
+		"eslint:fix": "eslint --quiet --fix .",
+		"format": "prettier --write \"resources/**/*.scss\" *.json",
+		"pot": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
+		"version": "easy-replace-in-files",
+		"prewpdeploy": "pnpm run deploy",
+		"wpdeploy": "wp-deployer",
+		"lint-pkg-json": "npmPkgJsonLint .",
+		"ready:build": "shx rm -rf assets/ && pnpm run prod",
+		"ready:vendor": "shx rm -rf vendor/ && composer install --no-dev --no-scripts -o",
+		"predeploy": "pnpm run ready:vendor && pnpm run ready:build",
+		"deploy": "packtor"
+	}
 }
