@@ -10,6 +10,7 @@
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
 		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"wp-cli/i18n-command": "^2.6",
 		"wp-coding-standards/wpcs": "3.1"
 	},
 	"config": {
@@ -21,8 +22,8 @@
 		"sort-packages": true
 	},
 	"scripts": {
-		"compat": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --standard=.phpcompat.xml.dist --report-full --report-summary .",
-		"lint": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --report-full --report-summary .",
-		"lint:fix": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf --report-full --report-summary ."
+		"phpcbf": "@php ./vendor/bin/phpcbf --report-full --report-summary .",
+		"phpcs": "@php ./vendor/bin/phpcs --report-full --report-summary .",
+		"pot": "wp i18n make-pot . --exclude=build,deploy,node_modules,vendor --headers='{\"POT-Creation-Date\":\"\"}'"
 	}
 }

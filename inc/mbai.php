@@ -92,7 +92,7 @@ final class MBAI {
 			array(
 				'page' => 'majestic-before-after-image',
 			),
-			admin_url( 'admin.php' )
+			admin_url( 'options-general.php' )
 		);
 
 		$actions = array_merge(
