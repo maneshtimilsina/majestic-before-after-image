@@ -7,8 +7,10 @@
  * Author: Manesh Timilsina
  * Author URI: https://maneshtimilsina.com/
  * Text Domain: majestic-before-after-image
+ * Domain Path: /languages
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
+ * Requires Plugins: elementor
  *
  * @package MBAI
  */

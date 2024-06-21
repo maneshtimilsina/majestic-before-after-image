@@ -2,15 +2,15 @@
 
 Contributors: maneshtimilsina, rabmalin
 Donate link: https://ko-fi.com/maneshtimilsina
-Tags: before, after, image, comparison, before after image comparison, before after, image comparison, before after image slider, elementor before after image, before and after image, image comparison for elementor, before after image for elementor
-Tested up to: 6.5
-License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: before, after, image, comparison, elementor
+Tested up to: 6.6
 Stable tag: 1.0.11
 Requires PHP: 7.4
 Requires at least: 6.0
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Majestic Before After Image is an Elementor addon to show the comparison of two images with a draggable handle. Compare two images by placing them side-by-side.
+Majestic Before After Image is an Elementor addon for the comparison of two images with a draggable handle. Compare images placing them side-by-side.
 
 == Description ==
 
