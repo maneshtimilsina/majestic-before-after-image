@@ -3,25 +3,21 @@ require( 'dotenv' ).config();
 const rootPath = './';
 const gulp = require( 'gulp' );
 const babel = require( 'gulp-babel' );
-const plumber = require( 'gulp-plumber' );
-const sass = require( 'gulp-sass' )( require( 'sass' ) );
 const sourcemaps = require( 'gulp-sourcemaps' );
 const browserSync = require( 'browser-sync' ).create();
 const postcss = require( 'gulp-postcss' );
 const postcssPresetEnv = require( 'postcss-preset-env' );
+const postcssNested = require( 'postcss-nested' );
 const environments = require( 'gulp-environments' );
 const development = environments.development;
 
 gulp.task( 'style', function () {
 	return gulp
-		.src( rootPath + 'resources/sass/*.scss' )
+		.src( rootPath + 'resources/styles/*.css' )
 		.pipe( development( sourcemaps.init() ) )
-		.pipe( sass().on( 'error', sass.logError ) )
 		.pipe( development( sourcemaps.write( { includeContent: false } ) ) )
 		.pipe( development( sourcemaps.init( { loadMaps: true } ) ) )
-		.pipe( plumber() )
-		.pipe( sass() )
-		.pipe( postcss( [ postcssPresetEnv() ] ) )
+		.pipe( postcss( [ postcssPresetEnv(), postcssNested() ] ) )
 		.pipe( development( sourcemaps.write( '.' ) ) )
 		.pipe( gulp.dest( rootPath + 'assets/css' ) );
 } );
