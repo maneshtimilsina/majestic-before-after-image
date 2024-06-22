@@ -13,9 +13,6 @@ const babel = require( 'gulp-babel' );
 // Plumber.
 const plumber = require( 'gulp-plumber' );
 
-// Autoprefixer.
-const autoprefixer = require( 'gulp-autoprefixer' );
-
 // SASS.
 const sass = require( 'gulp-sass' )( require( 'sass' ) );
 
@@ -38,7 +35,6 @@ gulp.task( 'style', function() {
 		.pipe( development( sourcemaps.init( { loadMaps: true } ) ) )
 		.pipe( plumber() )
 		.pipe( sass() )
-		.pipe( autoprefixer() )
 		.pipe( development( sourcemaps.write( '.' ) ) )
 		.pipe( gulp.dest( rootPath + 'assets/css' ) );
 } );
