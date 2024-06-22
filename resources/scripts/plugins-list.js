@@ -1,11 +1,14 @@
-( function( $ ) {
-	$.fn.WPC_Plugins_list = function( options ) {
-		const settings = $.extend( {
-			api: '',
-			action: 'plugins_list',
-			loading_text: 'Loading',
-			list_type: 'ul',
-		}, options );
+( function ( $ ) {
+	$.fn.WPC_Plugins_list = function ( options ) {
+		const settings = $.extend(
+			{
+				api: '',
+				action: 'plugins_list',
+				loading_text: 'Loading',
+				list_type: 'ul',
+			},
+			options
+		);
 
 		if ( '' === settings.api ) {
 			return this;
@@ -18,14 +21,19 @@
 				return output;
 			}
 
-			data.forEach( function( item ) {
-				output += '<li><a href="' + item.url + '" target="_blank">' + item.title + '</a></li>';
+			data.forEach( function ( item ) {
+				output +=
+					'<li><a href="' +
+					item.url +
+					'" target="_blank">' +
+					item.title +
+					'</a></li>';
 			} );
 
 			return $( '<' + settings.list_type + '/>' ).append( output );
 		}
 
-		return this.each( function() {
+		return this.each( function () {
 			const $wrapper = $( this );
 
 			$.ajax( {
@@ -53,5 +61,4 @@
 		list_type: 'ol',
 		action: 'wpc_mbai_get_plugins_list',
 	} );
-}( jQuery ) );
-
+} )( jQuery );
