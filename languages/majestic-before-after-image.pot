@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Majestic Before After Image 1.0.11\n"
+"Project-Id-Version: Majestic Before After Image 1.0.12\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/majestic-before-after-image\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
