@@ -24,6 +24,6 @@
 	"scripts": {
 		"phpcbf": "@php ./vendor/bin/phpcbf --report-full --report-summary .",
 		"phpcs": "@php ./vendor/bin/phpcs --report-full --report-summary .",
-		"pot": "wp i18n make-pot . --exclude=build,deploy,node_modules,vendor --headers='{\"POT-Creation-Date\":\"\"}'"
+		"pot": "./vendor/bin/wp i18n make-pot . --exclude=build,deploy,node_modules,vendor --headers='{\"POT-Creation-Date\":\"\"}'"
 	}
 }
