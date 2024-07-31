@@ -3,7 +3,9 @@
  * Plugin Name: Majestic Before After Image
  * Plugin URI: https://maneshtimilsina.com/plugins/majestic-before-after-image/
  * Description: Majestic Before After Image is an Elementor addon to show the comparison of two images with a draggable handle.
- * Version: 1.0.12
+ * Version: 2.0.0
+ * Requires PHP: 7.4
+ * Requires at least: 6.0
  * Author: Manesh Timilsina
  * Author URI: https://maneshtimilsina.com/
  * Text Domain: majestic-before-after-image
@@ -17,7 +19,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'MBAI_VERSION', '1.0.12' );
+define( 'MBAI_VERSION', '2.0.0' );
 define( 'MBAI_SLUG', 'majestic-before-after-image' );
 define( 'MBAI_BASE_NAME', basename( __DIR__ ) );
 define( 'MBAI_BASE_FILEPATH', __FILE__ );

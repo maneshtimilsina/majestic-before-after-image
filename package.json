@@ -1,6 +1,6 @@
 {
 	"name": "majestic-before-after-image",
-	"version": "1.0.12",
+	"version": "2.0.0",
 	"description": "Majestic Before After Image",
 	"main_file": "majestic-before-after-image.php",
 	"author": "Manesh Timilsina",
@@ -70,8 +70,8 @@
 		"wpdeploy": "wp-deployer",
 		"lint-pkg-json": "npmPkgJsonLint .",
 		"vendor": "composer install --no-dev --no-scripts -o",
-		"ready": "pnpm run vendor && pnpm run prod",
-		"predeploy": "rimraf assets deploy vendor && pnpm run ready",
+		"clean": "rimraf assets deploy vendor",
+		"predeploy": "pnpm run clean && pnpm run vendor && pnpm run prod",
 		"deploy": "packtor"
 	}
 }
