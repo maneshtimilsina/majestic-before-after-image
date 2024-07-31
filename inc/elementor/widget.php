@@ -5,11 +5,12 @@
  * @package MBAI
  */
 
-use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Typography;
-use Elementor\Group_Control_Image_Size;
 use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
+use Elementor\Group_Control_Image_Size;
+use Elementor\Group_Control_Typography;
+use Elementor\Utils;
+use Elementor\Widget_Base;
 
 /**
  * MBAI Elementor widget class.
@@ -146,7 +147,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 				'label'   => esc_html__( 'Before Image', 'majestic-before-after-image' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => array(
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
+					'url' => Utils::get_placeholder_image_src(),
 				),
 			)
 		);
@@ -157,7 +158,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 				'label'   => esc_html__( 'After Image', 'majestic-before-after-image' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => array(
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
+					'url' => Utils::get_placeholder_image_src(),
 				),
 			)
 		);

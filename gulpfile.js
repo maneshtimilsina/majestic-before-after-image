@@ -41,14 +41,14 @@ gulp.task( 'watch', function () {
 		open: 'yes' === process.env.BROWSERSYNC_OPEN ? true : false,
 	} );
 
-	gulp.watch(
-		rootPath + 'resources/sass/**/*.scss',
-		gulp.series( 'style' )
-	).on( 'change', browserSync.reload );
-	gulp.watch(
-		rootPath + 'resources/scripts/**/*.js',
-		gulp.series( 'script' )
-	).on( 'change', browserSync.reload );
+	gulp.watch( rootPath + 'resources/styles/**/*.css', gulp.series( 'style' ) ).on(
+		'change',
+		browserSync.reload
+	);
+	gulp.watch( rootPath + 'resources/scripts/**/*.js', gulp.series( 'script' ) ).on(
+		'change',
+		browserSync.reload
+	);
 	gulp.watch( rootPath + '**/**/*.php' ).on( 'change', browserSync.reload );
 } );
 

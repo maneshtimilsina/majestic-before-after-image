@@ -5,6 +5,8 @@
  * @package MBAI
  */
 
+use Elementor\Plugin;
+
 /**
  * MBAI Elementor class.
  *
@@ -86,7 +88,7 @@ class MBAI_Elementor {
 	public function register_widgets() {
 		$this->include_widgets_files();
 
-		\Elementor\Plugin::instance()->widgets_manager->register( new MBAI_Elementor_Widget() );
+		Plugin::instance()->widgets_manager->register( new MBAI_Elementor_Widget() );
 	}
 }
 
