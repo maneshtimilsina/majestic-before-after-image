@@ -5,6 +5,8 @@
  * @package MBAI
  */
 
+use Nilambar\AdminNotice\Notice;
+
 /**
  * Main MBAI class.
  *
@@ -111,7 +113,7 @@ final class MBAI {
 	 * @since 1.0.0
 	 */
 	public function nifty_cs_admin_notice() {
-		\Nilambar\AdminNotice\Notice::init(
+		Notice::init(
 			array(
 				'slug' => MBAI_SLUG,
 				'name' => esc_html__( 'Majestic Before After Image', 'majestic-before-after-image' ),

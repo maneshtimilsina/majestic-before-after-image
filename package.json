@@ -63,7 +63,7 @@
 		"dev": "pnpm run build && gulp",
 		"build": "gulp build",
 		"prod": "gulp build --env production",
-		"format": "prettier --write \"resources/**/*.{js,css}\" *.json gulpfile.js",
+		"format": "prettier \"**/*.{cjs,css,js,json,mjs}\" --write",
 		"pot": "composer run-script pot",
 		"version": "easy-replace-in-files",
 		"prewpdeploy": "pnpm run deploy",
@@ -71,7 +71,7 @@
 		"lint-pkg-json": "npmPkgJsonLint .",
 		"vendor": "composer install --no-dev --no-scripts -o",
 		"ready": "pnpm run vendor && pnpm run prod",
-		"predeploy": "rimraf assets vendor && pnpm run ready",
+		"predeploy": "rimraf assets deploy vendor && pnpm run ready",
 		"deploy": "packtor"
 	}
 }
