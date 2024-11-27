@@ -3,8 +3,8 @@
 Contributors: maneshtimilsina, rabmalin
 Donate link: https://ko-fi.com/maneshtimilsina
 Tags: before, after, image, comparison, elementor
-Stable tag: 2.0.0
-Tested up to: 6.6
+Stable tag: 2.0.1
+Tested up to: 6.7
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -64,6 +64,10 @@ Yes, it works with all themes.
 5. Widget Settings - Style
 
 == Changelog ==
+
+= 2.0.1 - 27 Nov 2024 =
+* WP Compatibility 6.7
+* Update packages
 
 = 2.0.0 - 31 Jul 2024 =
 * WP Compatibility 6.6
