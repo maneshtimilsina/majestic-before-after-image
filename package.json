@@ -1,6 +1,6 @@
 {
 	"name": "majestic-before-after-image",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Majestic Before After Image",
 	"main_file": "majestic-before-after-image.php",
 	"author": "Manesh Timilsina",
@@ -38,11 +38,11 @@
 		"extends": "@wordpress/npm-package-json-lint-config"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.24.7",
-		"@babel/preset-env": "^7.24.7",
-		"@wordpress/npm-package-json-lint-config": "^5.1.0",
-		"@wordpress/prettier-config": "^4.1.0",
-		"browser-sync": "^3.0.2",
+		"@babel/core": "^7.26.0",
+		"@babel/preset-env": "^7.26.0",
+		"@wordpress/npm-package-json-lint-config": "^5.13.0",
+		"@wordpress/prettier-config": "^4.13.0",
+		"browser-sync": "^3.0.3",
 		"dotenv": "^16.4.5",
 		"easy-replace-in-files": "^1.0.3",
 		"gulp": "^5.0.0",
@@ -52,11 +52,11 @@
 		"gulp-sourcemaps": "^3.0.0",
 		"npm-package-json-lint": "^8.0.0",
 		"packtor": "^1.0.2",
-		"postcss": "^8.4.38",
-		"postcss-nested": "^6.0.1",
-		"postcss-preset-env": "^9.5.14",
+		"postcss": "^8.4.49",
+		"postcss-nested": "^7.0.2",
+		"postcss-preset-env": "^10.1.1",
 		"prettier": "npm:wp-prettier@^3.0.3",
-		"rimraf": "^5.0.7",
+		"rimraf": "^6.0.1",
 		"wp-deployer": "^1.0.3"
 	},
 	"scripts": {
