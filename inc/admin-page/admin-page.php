@@ -46,18 +46,23 @@ class MBAI_Admin_Page {
 		$obj->set_quick_links(
 			array(
 				array(
-					'text' => 'View Details',
+					'text' => 'Plugin Homepage',
 					'url'  => 'https://maneshtimilsina.com/plugins/majestic-before-after-image/',
 					'type' => 'primary',
 				),
 				array(
 					'text' => 'View Demo',
-					'url'  => 'https://mbai.wpmanesh.com/',
+					'url'  => 'https://demo.maneshtimilsina.com/majestic-before-after-image/',
 					'type' => 'secondary',
 				),
 				array(
 					'text' => 'Get Support',
 					'url'  => 'https://wordpress.org/support/plugin/majestic-before-after-image/#new-post',
+					'type' => 'secondary',
+				),
+				array(
+					'text' => 'Buy Me a Coffee',
+					'url'  => 'https://ko-fi.com/maneshtimilsina',
 					'type' => 'secondary',
 				),
 			)
@@ -72,83 +77,35 @@ class MBAI_Admin_Page {
 		$obj->add_tab(
 			array(
 				'id'    => 'welcome',
-				'title' => 'Welcome',
+				'title' => '',
 				'type'  => 'grid',
 				'items' => array(
 					array(
-						'title'       => 'Elementor Widget',
-						'icon'        => 'dashicons dashicons-image-flip-horizontal',
-						'description' => "Edit page with Elementor, drag and drop the 'Majestic Before After Image' element to the section you want. And start customizing the widget.",
-					),
-					array(
-						'title'       => 'View Demo',
-						'icon'        => 'dashicons dashicons-desktop',
-						'description' => 'You can check out the plugin demo for reference to find out what you can achieve using the plugin and how it can be customized.',
-						'button_text' => 'Visit Demo',
-						'button_url'  => 'https://mbai.wpmanesh.com/',
-						'button_type' => 'secondary',
-						'is_new_tab'  => true,
-					),
-					array(
-						'title'       => 'Get Support',
-						'icon'        => 'dashicons dashicons-editor-help',
-						'description' => 'Got theme support question or found bug or got some feedbacks? Please visit support forum in the WordPress.org directory.',
-						'button_text' => 'Visit Support',
-						'button_url'  => 'https://wordpress.org/support/plugin/majestic-before-after-image/#new-post',
-						'button_type' => 'secondary',
-						'is_new_tab'  => true,
-					),
-					array(
 						'title'       => 'Documentation',
 						'icon'        => 'dashicons dashicons-admin-page',
-						'description' => 'Please check the plugin documentation for detailed information on how to setup and customize it.',
+						'description' => 'For setup and configuration, please refer to the documentation.',
 						'button_text' => 'View Documentation',
-						'button_url'  => 'https://doc.wpmanesh.com/majestic-before-after-image/',
+						'button_url'  => 'https://doc.maneshtimilsina.com/majestic-before-after-image/',
 						'button_type' => 'secondary',
 						'is_new_tab'  => true,
+					),
+					array(
+						'title'        => 'Leave a Review',
+						'icon'         => 'dashicons dashicons-star-filled',
+						'description'  => 'Enjoying the plugin? Please leave a review!',
+						'button_text'  => 'Submit Review',
+						'button_url'   => 'https://wordpress.org/support/plugin/majestic-before-after-image/reviews/#new-post',
+						'button_class' => 'button',
+						'button_type'  => 'secondary',
+						'is_new_tab'   => true,
 					),
 				),
 			)
 		);
 
-		$obj->set_sidebar(
-			array(
-				'render_callback' => array( $this, 'render_welcome_page_sidebar' ),
-			)
-		);
+
 
 		$obj->run();
-	}
-
-	/**
-	 * Render welcome page sidebar.
-	 *
-	 * @since 1.0.2
-	 *
-	 * @param Welcome $welcome_object Instance of Welcome class.
-	 */
-	public function render_welcome_page_sidebar( $welcome_object ) {
-		$welcome_object->render_sidebar_box(
-			array(
-				'title'        => 'Leave a Review',
-				'content'      => $welcome_object->get_stars() . sprintf( 'Are you enjoying %1$s? We would appreciate a review.', $welcome_object->get_name() ),
-				'button_text'  => 'Submit Review',
-				'button_url'   => 'https://wordpress.org/support/plugin/majestic-before-after-image/reviews/#new-post',
-				'button_class' => 'button',
-			),
-			$welcome_object
-		);
-
-		$welcome_object->render_sidebar_box(
-			array(
-				'title'        => 'Buy Me A Coffee',
-				'content'      => 'Would you like to support the advancement of this plugin?',
-				'button_text'  => 'Buy Me A Coffee',
-				'button_url'   => 'https://ko-fi.com/maneshtimilsina',
-				'button_class' => 'button',
-			),
-			$welcome_object
-		);
 	}
 }
 
