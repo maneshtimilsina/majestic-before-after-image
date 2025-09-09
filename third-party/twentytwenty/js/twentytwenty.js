@@ -29,8 +29,10 @@
         container.append( "<div class='twentytwenty-overlay " + overlay_class + " '></div>" );
         var overlay = container.find( '.twentytwenty-overlay' );
         if ( 'never' !== options.labels_status ) {
-	        overlay.append( "<div class='twentytwenty-before-label' data-content='" + options.before_label + "'></div>" );
-	        overlay.append( "<div class='twentytwenty-after-label' data-content='" + options.after_label + "'></div>" );
+          var beforeLabel = $("<div class='twentytwenty-before-label'></div>").attr('data-content', options.before_label);
+          var afterLabel = $("<div class='twentytwenty-after-label'></div>").attr('data-content', options.after_label);
+          overlay.append(beforeLabel);
+          overlay.append(afterLabel);
         }
       }
       var beforeImg = container.find( 'img:first' );
