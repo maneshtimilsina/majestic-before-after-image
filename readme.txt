@@ -65,6 +65,9 @@ Yes, it works with all themes.
 
 == Changelog ==
 
+= 2.0.3 - 09 Sep 2025 =
+* Minor JS Fixes
+
 = 2.0.2 - 08 Sep 2025 =
 * WP Compatibility 6.8
 * Admin Page Update
