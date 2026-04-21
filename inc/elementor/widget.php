@@ -33,8 +33,8 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		wp_register_style( 'mbai-twentytwenty', MBAI_URL . '/third-party/twentytwenty/css/twentytwenty.css', array(), MBAI_VERSION );
 		wp_register_style( 'mbai-widget', MBAI_URL . '/assets/css/mbai-elementor.css', array( 'mbai-twentytwenty' ), MBAI_VERSION );
 
-		wp_register_script( 'mbai-event-move', MBAI_URL . '/third-party/event-move/event.move.js', array(), MBAI_VERSION, false );
-		wp_register_script( 'mbai-twentytwenty', MBAI_URL . '/third-party/twentytwenty/js/twentytwenty.js', array(), MBAI_VERSION, false );
+		wp_register_script( 'mbai-event-move', MBAI_URL . '/third-party/event-move/event.move.js', array(), MBAI_VERSION, true );
+		wp_register_script( 'mbai-twentytwenty', MBAI_URL . '/third-party/twentytwenty/js/twentytwenty.js', array(), MBAI_VERSION, true );
 
 		wp_register_script( 'mbai-widget', MBAI_URL . '/assets/js/mbai-elementor.js', array( 'elementor-frontend', 'mbai-event-move', 'mbai-twentytwenty' ), MBAI_VERSION, true );
 	}
@@ -585,7 +585,6 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			array(
 				'type'      => Controls_Manager::COLOR,
 				'label'     => esc_html__( 'Handle Color', 'majestic-before-after-image' ),
-				'default'   => '#fff',
 				'selectors' => array(
 					'{{WRAPPER}} .twentytwenty-handle' => 'border-color: {{VALUE}};',
 					'{{WRAPPER}} .twentytwenty-horizontal .twentytwenty-handle:before' => 'background: {{VALUE}};',
@@ -611,7 +610,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 	 * @param array $instance Widget instance.
 	 */
 	protected function render( $instance = array() ) {
-		$settings = $this->get_settings();
+		$settings = $this->get_settings_for_display();
 
 		$data = array(
 			'orientation'          => esc_attr( $settings['slider_orientation'] ),
@@ -625,11 +624,11 @@ class MBAI_Elementor_Widget extends Widget_Base {
 			'move_slider_on_hover' => ( 'yes' === $settings['move_slider_on_hover'] ) ? true : false,
 		);
 		?>
-		<div class="mbai-before-after-wrap handle-type-<?php echo esc_attr( $settings['handle_type'] ); ?> handle-style-<?php echo absint( $settings['handle_style'] ); ?>" data-mbai='<?php echo wp_json_encode( $data ); ?>'>
+		<div class="mbai-before-after-wrap handle-type-<?php echo esc_attr( $settings['handle_type'] ); ?> handle-style-<?php echo absint( $settings['handle_style'] ); ?>" data-mbai='<?php echo esc_attr( wp_json_encode( $data ) ); ?>'>
 
 			<div class="mbai-before-after-container">
 
-				<?php $this->render_images(); ?>
+				<?php $this->render_images( $settings ); ?>
 
 			</div><!-- .mbai-before-after-container -->
 
@@ -642,8 +641,7 @@ class MBAI_Elementor_Widget extends Widget_Base {
 	 *
 	 * @since 1.0.0
 	 */
-	protected function render_images() {
-		$settings = $this->get_settings();
+	protected function render_images( array $settings ) {
 
 		$before_image = $settings['before_image'];
 		$after_image  = $settings['after_image'];
@@ -654,14 +652,14 @@ class MBAI_Elementor_Widget extends Widget_Base {
 		if ( absint( $before_image['id'] ) > 0 ) {
 			echo wp_get_attachment_image( $before_image['id'], $post_thumbnail_size, '', array( 'class' => 'img-before' ) );
 		} elseif ( ! empty( $before_image['url'] ) ) {
-			echo '<img src="' . esc_url( $before_image['url'] ) . '" class="img-before">';
+			echo '<img src="' . esc_url( $before_image['url'] ) . '" class="img-before" alt="'.esc_attr__( 'Default Before Image', 'majestic-before-after-image' ).'">';
 		}
 
 		// After image.
 		if ( absint( $after_image['id'] ) > 0 ) {
 			echo wp_get_attachment_image( $after_image['id'], $post_thumbnail_size, '', array( 'class' => 'img-after' ) );
 		} elseif ( ! empty( $after_image['url'] ) ) {
-			echo '<img src="' . esc_url( $after_image['url'] ) . '" class="img-after">';
+			echo '<img src="' . esc_url( $after_image['url'] ) . '" class="img-after" alt="'.esc_attr__( 'Default After Image', 'majestic-before-after-image' ).'">';
 		}
 	}
 }

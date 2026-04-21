@@ -62,7 +62,7 @@ class MBAI_Admin_Page {
 				),
 				array(
 					'text' => 'Buy Me a Coffee',
-					'url'  => 'https://ko-fi.com/maneshtimilsina',
+					'url'  => 'https://buymeacoffee.com/maneshtimilsina',
 					'type' => 'secondary',
 				),
 			)
@@ -102,8 +102,6 @@ class MBAI_Admin_Page {
 				),
 			)
 		);
-
-
 
 		$obj->run();
 	}

@@ -1,10 +1,10 @@
 === Majestic Before After Image ===
 
 Contributors: maneshtimilsina, nilambar
-Donate link: https://ko-fi.com/maneshtimilsina
+Donate link: https://buymeacoffee.com/maneshtimilsina
 Tags: before, after, image, comparison, elementor
-Stable tag: 2.0.3
-Tested up to: 6.8
+Stable tag: 2.0.4
+Tested up to: 6.9
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -64,6 +64,10 @@ Yes, it works with all themes.
 5. Widget Settings - Style
 
 == Changelog ==
+
+= 2.0.4 - 21 April 2026 =
+* WP Compatibility 6.9
+* Code Improvements
 
 = 2.0.3 - 09 Sep 2025 =
 * Minor JS Fixes
