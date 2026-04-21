@@ -19,7 +19,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'MBAI_VERSION', '2.0.3' );
+define( 'MBAI_VERSION', '2.0.4' );
 define( 'MBAI_SLUG', 'majestic-before-after-image' );
 define( 'MBAI_BASE_NAME', basename( __DIR__ ) );
 define( 'MBAI_BASE_FILEPATH', __FILE__ );
